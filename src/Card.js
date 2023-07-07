@@ -3,8 +3,8 @@ import "./commons/styles/Card.css";
 import Card_data from "./Card_data";
 
 export default function Card({ apple, mango }) {
-  console.log(apple);
-  console.log(mango);
+  // console.log(apple);
+  // console.log(mango);
   return (
     <>
       <div className="card_div">

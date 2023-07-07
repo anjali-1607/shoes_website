@@ -19,6 +19,21 @@ export default function Card_data() {
       image:
         "	https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
     },
+    {
+      name: "PUMA",
+      image:
+        "	https://rukminim1.flixcart.com/image/850/1000/xif0q/shoe/n/x/x/-original-imaggcb5yzbk6zpw.jpeg?q=20",
+    },
+    {
+      name: "BATA",
+      image:
+        "		https://static.toiimg.com/thumb/resizemode-4,width-1200,height-900,msid-85320690/85320690.jpg",
+    },
+    {
+      name: "WOODLAND",
+      image:
+        "https://i0.wp.com/1ststepin.com/wp-content/uploads/2021/04/woodland-shoe-g-40777cma-7.jpg?fit=1043%2C786&ssl=1",
+    },
   ];
 
   return (

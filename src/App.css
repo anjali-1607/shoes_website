@@ -1,8 +1,12 @@
+/* @font-face {
+  font-family: "Dongle-light";
+} */
+
 .main_div {
   width: auto;
   height: auto;
   background-color: #f1cc59;
-  color: #4ba5cd;
+  color: #2c86ad;
   padding: 1em 0 1em 0;
 }
 
@@ -18,6 +22,21 @@
   width: 30em;
   height: 10em;
   margin: 3em 40em;
+}
+.brand {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.brand_div {
+  width: 50em;
+  height: 5em;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 1em;
 }
 
 /* .image_div {

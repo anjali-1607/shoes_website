@@ -11,6 +11,22 @@
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
+/* .card_div:hover::before,
+.card_div:hover::after {
+  display: block;
+  content: "";
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: #fda8cf;
+  border-radius: 75px;
+  z-index: -1;
+  animation: 1s clockwise infinite;
+}
+.card_div:hover:after {
+  background: #f3ce5e;
+  animation: 2s counterclockwise infinite;
+} */
 .card_name_div {
   justify-content: baseline;
   align-items: baseline;
@@ -21,6 +37,16 @@
 }
 .cardtemplate {
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
-  gap: 50px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+.abt_div {
+  width: auto;
+  height: 40em;
+  background-color: white;
+  margin-top: 3em;
+  padding: 2em;
+  text-align: center;
+  /* display: flex; */
+  /* justify-content: center; */
 }

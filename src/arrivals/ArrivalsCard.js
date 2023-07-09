@@ -2,13 +2,18 @@ import React from "react";
 import "./Arrivals.css";
 import ArrivalsData from "./ArrivalsData";
 import { Button, Input, Menu } from "semantic-ui-react";
+import { useNavigate } from "react-router-dom";
 
 export default function ArrivalsCard({ name }) {
+  const navigate = useNavigate();
+  const gotohome = () => {
+    navigate("/");
+  };
   return (
     <>
       <div className="menu_div">
         <Menu>
-          <Menu.Item className="menu" name="Home" />
+          <Menu.Item className="menu" name="Home" onClick={gotohome} />
           <Menu.Item name="New Arrivals" />
           <Menu.Item name="Men" />
           <Menu.Item name="Women" />

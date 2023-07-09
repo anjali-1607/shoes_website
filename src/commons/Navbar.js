@@ -10,12 +10,15 @@ export default function Navbar() {
   const gotologin = () => {
     navigate("/login");
   };
+  const arr = () => {
+    navigate("/arrivals");
+  };
 
   return (
     <div className="menu_div">
       <Menu>
         <Menu.Item className="menu" name="Home" />
-        <Menu.Item name="New Arrivals" />
+        <Menu.Item name="New Arrivals" onClick={arr} />
         <Menu.Item name="Men" />
         <Menu.Item name="Women" />
         <Menu.Item name="Kids" />
@@ -34,6 +37,7 @@ export default function Navbar() {
             </Button>
           </div>
         </Menu.Menu>
+        <Menu.Item icon="user"></Menu.Item>
       </Menu>
     </div>
   );

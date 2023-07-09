@@ -1,0 +1,47 @@
+.form_div {
+  width: 40em;
+  margin: 15em 0 0 38em;
+}
+.menu_div {
+  margin-top: 1em;
+}
+.btn_signup {
+  padding: 11px 15px;
+  border-radius: 6px;
+  border: none;
+  background-color: #fbbd08;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  background-color: #28282b;
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  top: 0%;
+  z-index: -1;
+  opacity: 0;
+  transition: 1s;
+}
+.signup_form {
+  position: absolute;
+  left: 34%;
+  top: -50%;
+  transition: 2s;
+  z-index: 9;
+}
+.showoverlay {
+  opacity: 1;
+  z-index: 1;
+}
+.show_signup_form {
+  top: 26%;
+}
+
+.signup_div {
+  width: 40em;
+  /* margin: 15em 0 0 38em; */
+}
+
+.label.clr {
+  color: white;
+}

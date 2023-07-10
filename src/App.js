@@ -11,6 +11,7 @@ import ArrivalsData from "./arrivals/ArrivalsData";
 import MenCards from "./men/MenCards";
 import MenData from "./men/MenData";
 import WomenData from "./women/WomenData";
+import KidsData from "./kids/KidsData";
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/arrivals" element={<ArrivalsData />} />
         <Route path="/men" element={<MenData />} />
         <Route path="/women" element={<WomenData />} />
+        <Route path="/kids" element={<KidsData />} />
       </Routes>
     </Router>
   );

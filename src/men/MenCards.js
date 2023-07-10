@@ -1,14 +1,6 @@
 import React from "react";
-import "./Arrivals.css";
-import ArrivalsData from "./ArrivalsData";
-import { Button, Input, Menu } from "semantic-ui-react";
-import { useNavigate } from "react-router-dom";
 
-export default function ArrivalsCard({ name, image, price, rating }) {
-  const navigate = useNavigate();
-  const gotohome = () => {
-    navigate("/");
-  };
+export default function MenCards({ name, image, price, rating }) {
   return (
     <>
       <div>

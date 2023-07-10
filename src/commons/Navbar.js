@@ -25,7 +25,12 @@ export default function Navbar() {
           }}
         />
         <Menu.Item name="New Arrivals" onClick={arr} />
-        <Menu.Item name="Men" />
+        <Menu.Item
+          name="Men"
+          onClick={() => {
+            navigate("/men");
+          }}
+        />
         <Menu.Item name="Women" />
         <Menu.Item name="Kids" />
 

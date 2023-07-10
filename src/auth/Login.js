@@ -10,42 +10,41 @@ export default function Login() {
   };
   function showModal() {
     setIsopen(true);
-    // document.querySelector(".overlay").classList.add("showoverlay");
-    // document.querySelector(".signup_form").classList.add("show_signup_form");
   }
   function closeModal() {
     setIsopen(false);
-    // document.querySelector(".overlay").classList.remove("showoverlay");
-    // document.querySelector(".signup_form").classList.remove("show_signup_form");
   }
 
   return (
     <>
-      <div>
-        <Form className="form_div">
-          <Form.Field>
-            <label>Email</label>
-            <input placeholder="abc@gmail.com" />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input type="password" placeholder="*******" />
-          </Form.Field>
+      <div className="form">
+        <div className="form_login">
+          <Form>
+            <Form.Field>
+              <label>Email</label>
+              <input placeholder="abc@gmail.com" />
+            </Form.Field>
 
-          <Button
-            color="yellow"
-            type="submit"
-            onClick={() => {
-              gotoHomepage();
-            }}>
-            Login
-          </Button>
-          <h5
-            onClick={showModal}
-            style={{ textDecoration: "underline", cursor: "pointer" }}>
-            Create an Account
-          </h5>
-        </Form>
+            <Form.Field>
+              <label>Password</label>
+              <input type="password" placeholder="*******" />
+            </Form.Field>
+
+            <Button
+              color="yellow"
+              type="submit"
+              onClick={() => {
+                gotoHomepage();
+              }}>
+              Login
+            </Button>
+            <h5
+              onClick={showModal}
+              style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Create an Account
+            </h5>
+          </Form>
+        </div>
       </div>
       <div className={isopen ? "showoverlay overlay" : "overlay"}></div>
       <div className={isopen ? "show_signup_form signup_form" : "signup_form"}>

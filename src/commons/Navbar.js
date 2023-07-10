@@ -31,7 +31,12 @@ export default function Navbar() {
             navigate("/men");
           }}
         />
-        <Menu.Item name="Women" />
+        <Menu.Item
+          name="Women"
+          onClick={() => {
+            navigate("/women");
+          }}
+        />
         <Menu.Item name="Kids" />
 
         <Menu.Menu position="right">

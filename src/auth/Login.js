@@ -1,41 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button, Form, Input, Menu } from "semantic-ui-react";
 import "../commons/styles/Login.css";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
+  const [isopen, setIsopen] = useState(false);
   const navigate = useNavigate();
   const gotoHomepage = () => {
     navigate("/");
   };
   function showModal() {
-    document.querySelector(".overlay").classList.add("showoverlay");
-    document.querySelector(".signup_form").classList.add("show_signup_form");
+    setIsopen(true);
+    // document.querySelector(".overlay").classList.add("showoverlay");
+    // document.querySelector(".signup_form").classList.add("show_signup_form");
   }
   function closeModal() {
-    document.querySelector(".overlay").classList.remove("showoverlay");
-    document.querySelector(".signup_form").classList.remove("show_signup_form");
+    setIsopen(false);
+    // document.querySelector(".overlay").classList.remove("showoverlay");
+    // document.querySelector(".signup_form").classList.remove("show_signup_form");
   }
 
   return (
     <>
-      {/* <div className="menu_div">
-        <Menu>
-          <Menu.Item name="Home" />
-          <Menu.Item name="New Arrivals" />
-          <Menu.Item name="Men" />
-          <Menu.Item name="Women" />
-          <Menu.Item name="Kids" />
-          <Menu.Menu position="right">
-            <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
-            </Menu.Item>
-            <div className="login_btn_div">
-              <Button basic>Log In</Button>
-              <div className="overlay"></div>
-            </div>
-          </Menu.Menu>
-        </Menu>
-      </div> */}
       <div>
         <Form className="form_div">
           <Form.Field>
@@ -62,8 +47,8 @@ export default function Login() {
           </h5>
         </Form>
       </div>
-      <div className="overlay"></div>
-      <div className="signup_form">
+      <div className={isopen ? "showoverlay overlay" : "overlay"}></div>
+      <div className={isopen ? "show_signup_form signup_form" : "signup_form"}>
         <Form className="signup_div">
           <Form.Field>
             <label className="label_clr"> First Name</label>

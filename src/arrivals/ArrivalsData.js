@@ -1,6 +1,7 @@
 import React from "react";
 import "./Arrivals.css";
 import ArrivalsCard from "./ArrivalsCard";
+import Navbar from "../commons/Navbar";
 
 export default function ArrivalsData() {
   const data = [
@@ -37,18 +38,21 @@ export default function ArrivalsData() {
   ];
 
   return (
-    <div>
-      {data.map((e) => {
-        console.log(e);
-        return (
-          <ArrivalsCard
-            image={e.img}
-            name={e.name}
-            price={e.price}
-            rating={e.rating}
-          />
-        );
-      })}
-    </div>
+    <>
+      <Navbar />
+      <div className="card_manager">
+        {data.map((e) => {
+          console.log(e);
+          return (
+            <ArrivalsCard
+              image={e.img}
+              name={e.name}
+              price={e.price}
+              rating={e.rating}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }

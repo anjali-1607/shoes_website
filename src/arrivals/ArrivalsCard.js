@@ -11,7 +11,7 @@ export default function ArrivalsCard({ name }) {
   };
   return (
     <>
-      <div className="menu_div">
+      {/* <div className="menu_div">
         <Menu>
           <Menu.Item className="menu" name="Home" onClick={gotohome} />
           <Menu.Item name="New Arrivals" />
@@ -29,12 +29,12 @@ export default function ArrivalsCard({ name }) {
           </Menu.Menu>
           <Menu.Item icon="user"></Menu.Item>
         </Menu>
-      </div>
+      </div> */}
 
-      <div className="card_manager">
+      <div>
         <div className="card">
           <div className="img_div">
-            <img src="		https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg" />
+            <img src="https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg" />
           </div>
           <h3 style={{ textAlign: "center", marginTop: "5px" }}>{name}</h3>
           <div className="desc">
@@ -44,11 +44,6 @@ export default function ArrivalsCard({ name }) {
             </h4>
           </div>
         </div>
-
-        {/* <div className="card">1</div>
-        <div className="card">1</div>
-        <div className="card">1</div>
-        <div className="card">1</div> */}
       </div>
     </>
   );

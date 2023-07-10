@@ -17,7 +17,13 @@ export default function Navbar() {
   return (
     <div className="menu_div">
       <Menu>
-        <Menu.Item className="menu" name="Home" />
+        <Menu.Item
+          className="menu"
+          name="Home"
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <Menu.Item name="New Arrivals" onClick={arr} />
         <Menu.Item name="Men" />
         <Menu.Item name="Women" />

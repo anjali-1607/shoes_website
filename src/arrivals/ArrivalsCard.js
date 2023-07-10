@@ -11,26 +11,6 @@ export default function ArrivalsCard({ name }) {
   };
   return (
     <>
-      {/* <div className="menu_div">
-        <Menu>
-          <Menu.Item className="menu" name="Home" onClick={gotohome} />
-          <Menu.Item name="New Arrivals" />
-          <Menu.Item name="Men" />
-          <Menu.Item name="Women" />
-          <Menu.Item name="Kids" />
-
-          <Menu.Menu position="right">
-            <Menu.Item>
-              <Input icon="search" placeholder="Search..." />
-            </Menu.Item>
-            <div className="login_btn_div">
-              <Button basic>Log In</Button>
-            </div>
-          </Menu.Menu>
-          <Menu.Item icon="user"></Menu.Item>
-        </Menu>
-      </div> */}
-
       <div>
         <div className="card">
           <div className="img_div">

@@ -22,30 +22,41 @@ export default function Login() {
   return (
     <>
       <div>
-        <Form className="form_div">
-          <Form.Field>
-            <label>Email</label>
-            <input placeholder="abc@gmail.com" />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input type="password" placeholder="*******" />
-          </Form.Field>
+        <div className="login_div">
+          <Form>
+            <h1 style={{ textAlign: "center" }}>Login</h1>
+            <Form.Field>
+              <label>Email</label>
+              <input placeholder="abc@gmail.com" />
+            </Form.Field>
+            <Form.Field>
+              <label>Password</label>
+              <input type="password" placeholder="*******" />
+            </Form.Field>
+            <p
+              style={{
+                textAlign: "right",
+                textDecoration: "underline",
+                cursor: "pointer",
+              }}>
+              Forgot Password
+            </p>
 
-          <Button
-            color="yellow"
-            type="submit"
-            onClick={() => {
-              gotoHomepage();
-            }}>
-            Login
-          </Button>
-          <h5
-            onClick={showModal}
-            style={{ textDecoration: "underline", cursor: "pointer" }}>
-            Create an Account
-          </h5>
-        </Form>
+            <Button
+              color="yellow"
+              type="submit"
+              onClick={() => {
+                gotoHomepage();
+              }}>
+              Login
+            </Button>
+            <h5
+              onClick={showModal}
+              style={{ textDecoration: "underline", cursor: "pointer" }}>
+              Create an Account
+            </h5>
+          </Form>
+        </div>
       </div>
       <div className={isopen ? "showoverlay overlay" : "overlay"}></div>
       <div className={isopen ? "show_signup_form signup_form" : "signup_form"}>

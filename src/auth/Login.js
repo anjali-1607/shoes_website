@@ -72,36 +72,31 @@ export default function Login() {
         </div>
       </div>
       <div className={isopen ? "showoverlay overlay" : "overlay"}></div>
-      <div className={isopen ? "show_signup_form signup_form" : "signup_form"}>
-        <Form className="signup_div">
-          <Form.Field>
-            <label className="label_clr"> First Name</label>
-            <input placeholder="First Name" />
-          </Form.Field>
-          <Form.Field>
-            <label>Last Name</label>
-            <input placeholder="Last Name" />
-          </Form.Field>
-          <Form.Field>
-            <label>Email</label>
-            <input placeholder="abc@gmail.com" />
-          </Form.Field>
-          <Form.Field>
-            <label>Password</label>
-            <input type="password" placeholder="*******" />
-          </Form.Field>
-
-          <Button color="yellow" type="submit">
-            SignUp
-          </Button>
-          <Button
-            floated="right"
-            color="yellow"
-            type="submit"
-            onClick={closeModal}>
-            Login
-          </Button>
-        </Form>
+      <div className={isopen ? "show_signup_div signup_div" : "signup_div"}>
+        <div>
+          <Form>
+            <h1 style={{ textAlign: "center" }}>SignUp</h1>
+            <Form.Field>
+              <label className="label_clr"> First Name</label>
+              <input placeholder="First Name" />
+            </Form.Field>
+            <Form.Field>
+              <label>Last Name</label>
+              <input placeholder="Last Name" />
+            </Form.Field>
+            <Form.Field>
+              <label>Email</label>
+              <input placeholder="abc@gmail.com" />
+            </Form.Field>
+            <Form.Field>
+              <label>Password</label>
+              <input type="password" placeholder="*******" />
+            </Form.Field>
+            <button className="signup_btn2" onClick={closeModal}>
+              SignUp
+            </button>
+          </Form>
+        </div>
       </div>
     </>
   );

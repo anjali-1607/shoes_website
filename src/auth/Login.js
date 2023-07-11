@@ -25,6 +25,7 @@ export default function Login() {
         <div className="login_div">
           <Form>
             <h1 style={{ textAlign: "center" }}>Login</h1>
+
             <Form.Field>
               <label>Email</label>
               <input placeholder="abc@gmail.com" />
@@ -42,19 +43,31 @@ export default function Login() {
               Forgot Password
             </p>
 
-            <Button
+            {/* <Button
               color="yellow"
               type="submit"
               onClick={() => {
                 gotoHomepage();
               }}>
               Login
-            </Button>
-            <h5
+            </Button> */}
+            <div className="log_sign_btn">
+              <button
+                className="login_btn"
+                onClick={() => {
+                  gotoHomepage();
+                }}>
+                Login
+              </button>
+              <button className="signup_btn" onClick={showModal}>
+                SignUp
+              </button>
+            </div>
+            {/* <h5
               onClick={showModal}
               style={{ textDecoration: "underline", cursor: "pointer" }}>
               Create an Account
-            </h5>
+            </h5> */}
           </Form>
         </div>
       </div>

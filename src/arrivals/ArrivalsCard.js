@@ -14,7 +14,7 @@ export default function ArrivalsCard({ name, image, price, rating }) {
       <div>
         <div className="card">
           <div className="img_div">
-            <img src={image} />
+            <img className="image" src={image} />
           </div>
           <h3 style={{ textAlign: "center", marginTop: "5px" }}>{name}</h3>
           <div className="desc">

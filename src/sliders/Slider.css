@@ -1,0 +1,46 @@
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.carousel-container {
+  max-width: 750px;
+}
+
+.mycard {
+  /* min-width: 300px;
+  max-width: 300px; */
+  width: 1000px;
+  height: 320px;
+  background-color: aquamarine;
+  margin: 2px;
+}
+.product_container {
+  /* padding: 0 10px; */
+  display: flex;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+.product-carousal {
+  position: relative;
+  overflow: hidden;
+}
+.pre_btn,
+.next_btn {
+  border: none;
+  width: 60px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 50%;
+  /* border: 1px solid white; */
+}
+.next_btn {
+  right: 0;
+}

@@ -2,9 +2,8 @@ import React from "react";
 import "./App.css";
 import Main from "./Main";
 import Navbar from "./commons/Navbar";
-import Card_data from "./Card_data";
+import Card_data from "./home_cards/Card_data";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Login from "./auth/Login";
 import ArrivalsCard from "./arrivals/ArrivalsCard";
 import ArrivalsData from "./arrivals/ArrivalsData";

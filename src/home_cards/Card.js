@@ -1,5 +1,5 @@
 import React from "react";
-import "./commons/styles/Card.css";
+import "./styles/Card.css";
 import Card_data from "./Card_data";
 
 export default function Card({ apple, mango }) {

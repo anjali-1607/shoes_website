@@ -18,7 +18,7 @@ body {
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-img {
+.image {
   width: 300px;
   height: 280px;
   border-radius: 1em 1em 0 0;

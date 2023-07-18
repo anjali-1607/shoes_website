@@ -1,6 +1,6 @@
 import React from "react";
 import Card from "./Card";
-import "./commons/styles/Card.css";
+import "./styles/Card.css";
 
 export default function Card_data() {
   const data = [

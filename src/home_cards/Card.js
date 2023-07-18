@@ -13,7 +13,7 @@ export default function Card({ apple, mango }) {
         </div>
         <div className="card_name_div">
           {" "}
-          <h1>{apple}</h1>
+          <h1 style={{ fontFamily: "Cinzel,sans-serif" }}>{apple}</h1>
         </div>
       </div>
     </>

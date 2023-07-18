@@ -1,8 +1,9 @@
 .card_div {
-  width: 22em;
+  width: 24em;
   height: 25em;
   background-color: white;
-  margin: 1em;
+  margin: 1em 0.5em 1em 1em;
+
   text-align: center;
   box-shadow: "50px";
   border-radius: 1em;
@@ -20,6 +21,7 @@
 .images {
   width: 100%;
   height: 100%;
+  border-radius: 8px 8px 0 0;
 }
 
 .card_name_div {
@@ -29,6 +31,7 @@
   align-items: center;
   justify-content: center;
   display: flex;
+  border-radius: 0 0 8px 8px;
 }
 
 .cardtemplate {
@@ -36,17 +39,7 @@
   height: 100%;
   /* background-color: brown; */
   display: grid;
-  /* grid-template-columns: repeat(5, 1fr); */
+  grid-template-columns: repeat(4, 1fr);
 
   /* gap: 40px; */
-}
-.abt_div {
-  width: auto;
-  height: 40em;
-  background-color: white;
-  margin-top: 3em;
-  padding: 2em;
-  text-align: center;
-  /* display: flex; */
-  /* justify-content: center; */
 }

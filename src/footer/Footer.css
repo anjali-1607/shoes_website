@@ -1,0 +1,6 @@
+.grand_footer {
+  margin: 3em 20em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20em;
+}

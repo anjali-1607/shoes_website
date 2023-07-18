@@ -8,20 +8,21 @@ body {
   height: auto;
   background-color: #e7e7e7;
   /* background-color: #f1cc59; */
-  color: #464646;
-  padding: 1px 0 1px 0;
+  color: #1e1e1e;
+
+  padding: 0.5px 0 1px 0;
   /* padding: 1em 0 1em 0; */
 }
 .grand_carousel {
   /* width: 100em; */
-  height: 25em;
+  height: 30em;
   margin: 1em;
   /* background-color: antiquewhite; */
 }
 
 .carousel_img {
   width: 100%;
-  height: 25em;
+  height: 30em;
 }
 
 .login_div {
@@ -37,15 +38,20 @@ body {
 
 .brand_div {
   width: 100%;
-  height: 5em;
+  height: 8em;
   margin: 0 1em 0 1em;
-  background-color: rgb(221, 221, 221);
+  background-color: rgba(221, 221, 221, 0);
   align-items: center;
   justify-content: center;
   display: flex;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   /* border-radius: 1em; */
 }
-
+.brands_best_sellers {
+  font-family: Cinzel, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+}
 /* .image_div {
   background-color: white;
 } */

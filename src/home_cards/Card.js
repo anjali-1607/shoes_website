@@ -9,13 +9,7 @@ export default function Card({ apple, mango }) {
     <>
       <div className="card_div">
         <div className="image_div">
-          <img
-            src={mango}
-            style={{
-              height: "280px",
-              width: "inherit",
-            }}
-          />
+          <img className="images" src={mango} />
         </div>
         <div className="card_name_div">
           {" "}

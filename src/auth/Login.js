@@ -10,13 +10,9 @@ export default function Login() {
   };
   function showModal() {
     setIsopen(true);
-    // document.querySelector(".overlay").classList.add("showoverlay");
-    // document.querySelector(".signup_form").classList.add("show_signup_form");
   }
   function closeModal() {
     setIsopen(false);
-    // document.querySelector(".overlay").classList.remove("showoverlay");
-    // document.querySelector(".signup_form").classList.remove("show_signup_form");
   }
 
   return (

@@ -15,7 +15,7 @@ export default function Main() {
         <div className="grand_carousel">
           <img
             className="carousel_img"
-            src={require("./images/carousel_1.jpg")}
+            src={require("./images/carousel_2.png")}
             alt=""
           />
           {/* <Slider /> */}

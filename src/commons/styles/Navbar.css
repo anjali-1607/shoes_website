@@ -3,4 +3,13 @@
 }
 .menu_div {
   z-index: 9;
+  background-color: aliceblue;
+}
+.ui.menu .item {
+  background: #ebebeb;
+}
+.menu_div .menu .item:hover {
+  background-color: #636363; /* Add your desired background color on hover */
+  cursor: pointer; /* Add a pointer cursor on hover to indicate interactivity */
+  /* Add any other styles you want to apply on hover */
 }

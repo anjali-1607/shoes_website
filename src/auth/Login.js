@@ -3,6 +3,9 @@ import { Button, Form, Input, Menu } from "semantic-ui-react";
 import "../commons/styles/Login.css";
 import { useNavigate } from "react-router-dom";
 export default function Login() {
+  // const [data, setData] = useState({});
+  // console.log(data);
+  // console.log(setData);
   const [isopen, setIsopen] = useState(false);
   const navigate = useNavigate();
   const gotoHomepage = () => {
@@ -39,14 +42,6 @@ export default function Login() {
               Forgot Password
             </p>
 
-            {/* <Button
-              color="yellow"
-              type="submit"
-              onClick={() => {
-                gotoHomepage();
-              }}>
-              Login
-            </Button> */}
             <div className="log_sign_btn">
               <button
                 className="login_btn"
@@ -59,11 +54,6 @@ export default function Login() {
                 SignUp
               </button>
             </div>
-            {/* <h5
-              onClick={showModal}
-              style={{ textDecoration: "underline", cursor: "pointer" }}>
-              Create an Account
-            </h5> */}
           </Form>
         </div>
       </div>
@@ -74,7 +64,13 @@ export default function Login() {
             <h1 style={{ textAlign: "center" }}>SignUp</h1>
             <Form.Field>
               <label className="label_clr"> First Name</label>
-              <input placeholder="First Name" />
+              <input
+                placeholder="First Name"
+                // type="text"
+                // onChange={(event) =>
+                //   setData({ ...data, first_name: event.target.value })
+                // }
+              />
             </Form.Field>
             <Form.Field>
               <label>Last Name</label>

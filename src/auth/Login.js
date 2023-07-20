@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import { Button, Form, Input, Menu } from "semantic-ui-react";
 import "../commons/styles/Login.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+
 export default function Login() {
-  // const [data, setData] = useState({});
-  // console.log(data);
-  // console.log(setData);
+  const [data, setData] = useState({});
+
+  console.log(data);
+  console.log(setData);
   const [isopen, setIsopen] = useState(false);
   const navigate = useNavigate();
   const gotoHomepage = () => {
@@ -17,6 +20,11 @@ export default function Login() {
   function closeModal() {
     setIsopen(false);
   }
+
+  // axios
+  //   .post("http://localhost:1337/api/auth/local/register", { data })
+  //   .then((response) => console.log(response))
+  //   .catch((err) => console.log(err));
 
   return (
     <>
@@ -66,15 +74,16 @@ export default function Login() {
               <label className="label_clr"> First Name</label>
               <input
                 placeholder="First Name"
-                // type="text"
-                // onChange={(event) =>
-                //   setData({ ...data, first_name: event.target.value })
-                // }
+                type="text"
+                value={data.first_name}
+                onChange={(event) =>
+                  setData({ ...data, first_name: event.target.value })
+                }
               />
             </Form.Field>
             <Form.Field>
               <label>Last Name</label>
-              <input placeholder="Last Name" />
+              <input placeholder="Last Name" type="text" />
             </Form.Field>
             <Form.Field>
               <label>Email</label>

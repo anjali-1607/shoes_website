@@ -8,7 +8,7 @@ export default function Login() {
   const [data, setData] = useState({});
 
   console.log(data);
-  console.log(setData);
+
   const [isopen, setIsopen] = useState(false);
   const navigate = useNavigate();
   const gotoHomepage = () => {
@@ -21,10 +21,27 @@ export default function Login() {
     setIsopen(false);
   }
 
-  // axios
-  //   .post("http://localhost:1337/api/auth/local/register", { data })
-  //   .then((response) => console.log(response))
-  //   .catch((err) => console.log(err));
+  const getSignupVal = (event) => {
+    setData({ ...data, [event.target.name]: event.target.value });
+  };
+
+  const onSignup = async () => {
+    let eData = data.email.split("@");
+    // console.log(eData);
+    const username = eData[0];
+    console.log(username);
+    await axios
+      .post("http://localhost:1337/api/auth/local/register", {
+        ...data,
+        username: username,
+      })
+      .then((response) => {
+        console.log(response);
+        setData({});
+        closeModal();
+      })
+      .catch((err) => console.log(err));
+  };
 
   return (
     <>
@@ -68,34 +85,52 @@ export default function Login() {
       <div className={isopen ? "showoverlay overlay" : "overlay"}></div>
       <div className={isopen ? "show_signup_div signup_div" : "signup_div"}>
         <div>
-          <Form>
+          <Form onSubmit={onSignup}>
             <h1 style={{ textAlign: "center" }}>SignUp</h1>
-            <Form.Field>
+            <Form.Field required={true}>
               <label className="label_clr"> First Name</label>
               <input
+                required={true}
                 placeholder="First Name"
                 type="text"
-                value={data.first_name}
-                onChange={(event) =>
-                  setData({ ...data, first_name: event.target.value })
-                }
+                value={data.first_name || ""}
+                name="first_name"
+                onChange={getSignupVal}
               />
             </Form.Field>
-            <Form.Field>
+            <Form.Field required={true}>
               <label>Last Name</label>
-              <input placeholder="Last Name" type="text" />
+              <input
+                required={true}
+                placeholder="Last Name"
+                type="text"
+                name="last_name"
+                onChange={getSignupVal}
+              />
             </Form.Field>
-            <Form.Field>
+            <Form.Field required={true}>
               <label>Email</label>
-              <input placeholder="abc@gmail.com" />
+              <input
+                type="email"
+                required={true}
+                placeholder="abc@gmail.com"
+                name="email"
+                onChange={getSignupVal}
+              />
             </Form.Field>
-            <Form.Field>
+            <Form.Field required={true}>
               <label>Password</label>
-              <input type="password" placeholder="*******" />
+              <input
+                required={true}
+                type="password"
+                placeholder="*******"
+                name="password"
+                onChange={getSignupVal}
+              />
             </Form.Field>
-            <button className="signup_btn2" onClick={closeModal}>
+            <Button loading={false} className="signup_btn2" type="submit">
               SignUp
-            </button>
+            </Button>
           </Form>
         </div>
       </div>

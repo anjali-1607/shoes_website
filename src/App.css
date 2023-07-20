@@ -1,6 +1,7 @@
-body {
-  box-sizing: border-box;
-  margin: 0;
+* {
+  /* box-sizing: border-box; */
+  margin: 0 0 0 0;
+  padding: 0;
 }
 
 .main_div {
@@ -9,8 +10,9 @@ body {
   background-color: #e7e7e7;
   /* background-color: #f1cc59; */
   color: #1e1e1e;
-
-  padding: 0.5px 0 1px 0;
+  padding: 0em;
+  margin: 0;
+  /* padding: 0 0 1px 0; */
   /* padding: 1em 0 1em 0; */
 }
 .grand_carousel {

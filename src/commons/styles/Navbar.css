@@ -1,15 +1,14 @@
+/* body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+} */
+
 .login_btn_div {
   margin-top: 4px;
 }
 .menu_div {
+  /* position: fixed; */
   z-index: 9;
   background-color: aliceblue;
-}
-.ui.menu .item {
-  background: #ebebeb;
-}
-.menu_div .menu .item:hover {
-  background-color: #636363; /* Add your desired background color on hover */
-  cursor: pointer; /* Add a pointer cursor on hover to indicate interactivity */
-  /* Add any other styles you want to apply on hover */
 }

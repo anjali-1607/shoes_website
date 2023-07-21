@@ -17,14 +17,12 @@
   box-shadow: rgba(213, 213, 213, 0.775) 0px 3px 8px;
   position: absolute;
   left: 36.6%;
-  top: -70%;
+  top: -100%;
   transition: 2s;
   z-index: 9;
+  overflow-y: hidden;
 }
 
-.menu_div {
-  margin-top: 1em;
-}
 /* .btn_signup {
   padding: 11px 15px;
   border-radius: 6px;
@@ -33,7 +31,7 @@
 } */
 .overlay {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   background-color: #28282b;
   /* background-color: rgba(0, 0, 0, 0.5); */
@@ -41,15 +39,18 @@
   z-index: -1;
   opacity: 0;
   transition: 1s;
+  overflow: hidden;
 }
 
 .showoverlay {
   opacity: 0.7;
   z-index: 1;
+  height: 100%;
+  overflow: hidden;
 }
 .show_signup_div {
   z-index: 9;
-  top: 10%;
+  top: 20%;
 }
 
 .label.clr {

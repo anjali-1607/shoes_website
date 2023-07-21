@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 import "./styles/Login.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Signup({ isopen = false, setIsOpen = () => {} }) {
+  const navigate = useNavigate();
   const [data, setData] = useState({});
 
   const getSignupVal = (event) => {
@@ -82,7 +84,11 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
                 onChange={getSignupVal}
               />
             </Form.Field>
-            <Button loading={false} className="signup_btn2" type="submit">
+            <Button
+              loading={false}
+              className="signup_btn2"
+              type="submit"
+              onClick={() => navigate("/")}>
               SignUp
             </Button>
             <a

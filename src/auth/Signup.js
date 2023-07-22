@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
+import { isDisabled } from "@testing-library/user-event/dist/utils";
 
 export default function Signup({ isopen = false, setIsOpen = () => {} }) {
   const navigate = useNavigate();
@@ -9,28 +11,46 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
 
   const getSignupVal = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
+    console.log(data);
   };
 
-  const onSignup = async () => {
+  const onSignup = () => {
     let eData = data.email.split("@");
+    console.log(eData);
     const username = eData[0];
-    try {
-      // Commented out for now - API call with axios
-      // const response = await axios.post("http://localhost:1337/api/auth/local/register", {
-      //   ...data,
-      //   username: username,
-      // });
-      // console.log(response);
-
-      setData({});
-      // Add any additional logic here for successful signup, e.g., showing a success message.
-      // closeModal();
-      // Close the signup modal after successful signup
-    } catch (error) {
-      console.log(error);
-      // Handle signup error here, e.g., show an error message.
-    }
+    console.log(username);
+    // await axios
+    //   .post("http://localhost:1337/api/auth/local/register", {
+    //     ...data,
+    //     username: username,
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     setData({});
+    //     disabled = "false";
+    //   })
+    //   .catch((err) => console.log(err));
   };
+
+  // const onSignup = async () => {
+  //   let eData = data.email.split("@");
+  //   const username = eData[0];
+  //   try {
+  //     const response = await axios.post(
+  //       "http://localhost:1337/api/auth/local/register",
+  //       {
+  //         ...data,
+  //         username: username,
+  //       }
+  //     );
+  //     console.log(response);
+
+  //     setData({});
+  //   } catch (error) {
+  //     console.log(error);
+  //     // Handle signup error here, e.g., show an error message.
+  //   }
+  // };
 
   return (
     <>
@@ -86,6 +106,7 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
             </Form.Field>
             <Button
               loading={false}
+              disabled={!data}
               className="signup_btn2"
               type="submit"
               onClick={() => navigate("/")}>

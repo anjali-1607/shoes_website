@@ -8,49 +8,41 @@ import { isDisabled } from "@testing-library/user-event/dist/utils";
 export default function Signup({ isopen = false, setIsOpen = () => {} }) {
   const navigate = useNavigate();
   const [data, setData] = useState({});
+  const [errorMessage, setErrorMessage] = useState("");
 
   const getSignupVal = (event) => {
     setData({ ...data, [event.target.name]: event.target.value });
     console.log(data);
+
+    if (event.target.name === "password") {
+      if (event.target.value.length < 6) {
+        setErrorMessage("Password must contain at least 6 characters");
+      } else {
+        setErrorMessage(""); // Reset the error message
+      }
+    }
   };
 
-  const onSignup = () => {
+  const onSignup = async () => {
     let eData = data.email.split("@");
     console.log(eData);
+    const pass = data.password;
+    console.log(pass.length);
+
     const username = eData[0];
     console.log(username);
-    // await axios
-    //   .post("http://localhost:1337/api/auth/local/register", {
-    //     ...data,
-    //     username: username,
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     setData({});
-    //     disabled = "false";
-    //   })
-    //   .catch((err) => console.log(err));
+    await axios
+      .post("http://localhost:1337/api/auth/local/register", {
+        ...data,
+        username: username,
+      })
+      .then((response) => {
+        console.log(response);
+        setData({});
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
   };
-
-  // const onSignup = async () => {
-  //   let eData = data.email.split("@");
-  //   const username = eData[0];
-  //   try {
-  //     const response = await axios.post(
-  //       "http://localhost:1337/api/auth/local/register",
-  //       {
-  //         ...data,
-  //         username: username,
-  //       }
-  //     );
-  //     console.log(response);
-
-  //     setData({});
-  //   } catch (error) {
-  //     console.log(error);
-  //     // Handle signup error here, e.g., show an error message.
-  //   }
-  // };
 
   return (
     <>
@@ -103,13 +95,17 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
                 value={data.password || ""}
                 onChange={getSignupVal}
               />
+              {errorMessage && (
+                <div style={{ color: "red" }}>{errorMessage}</div>
+              )}
             </Form.Field>
             <Button
               loading={false}
-              disabled={!data}
+              // disabled={!data}
               className="signup_btn2"
               type="submit"
-              onClick={() => navigate("/")}>
+              // onClick={() => navigate("/")}
+            >
               SignUp
             </Button>
             <a

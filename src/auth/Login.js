@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import Signup from "./Signup";
+import axios from "axios";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const [data, setData] = useState({});
   const [isSignupOpen, setIsSignupOpen] = React.useState(false);
 
   const showSignupModal = () => {
@@ -15,19 +18,52 @@ export default function Login() {
     setIsSignupOpen(data);
   };
 
+  const getSignupVal = (event) => {
+    setData({ ...data, [event.target.name]: event.target.value });
+    console.log(data);
+  };
+
+  const onSignup = async () => {
+    await axios
+      .post(" http://localhost:1337/api/auth/local", {
+        ...data,
+      })
+      .then((response) => {
+        console.log(response);
+        localStorage.setItem("access_token");
+        setData({});
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <>
       <div>
         <div className="login_div">
-          <Form>
+          <Form onSubmit={onSignup}>
             <h1 style={{ textAlign: "center" }}>Login</h1>
             <Form.Field>
               <label>Email</label>
-              <input placeholder="abc@gmail.com" />
+              <input
+                type="email"
+                required={true}
+                placeholder="abc@gmail.com"
+                name="identifier"
+                value={data.identifier || ""}
+                onChange={getSignupVal}
+              />
             </Form.Field>
             <Form.Field>
               <label>Password</label>
-              <input type="password" placeholder="*******" />
+              <input
+                type="password"
+                placeholder="*******"
+                required={true}
+                name="password"
+                value={data.password || ""}
+                onChange={getSignupVal}
+              />
             </Form.Field>
             <p
               style={{

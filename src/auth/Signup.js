@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import { isDisabled } from "@testing-library/user-event/dist/utils";
+import { publicAxios } from "../commons/auth.js";
 
 export default function Signup({ isopen = false, setIsOpen = () => {} }) {
   const navigate = useNavigate();
@@ -31,14 +30,14 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
 
     const username = eData[0];
     console.log(username);
-    await axios
-      .post("http://localhost:1337/api/auth/local/register", {
+    await publicAxios
+      .post("auth/local/register", {
         ...data,
         username: username,
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("access_token", response.data.jwt);
+        localStorage.setItem("access_token", response.jwt);
         setData({});
         navigate("/");
       })

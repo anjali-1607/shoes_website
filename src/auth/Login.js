@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import Signup from "./Signup";
 import axios from "axios";
+import { publicAxios } from "../commons/auth";
 
 export default function Login() {
   const navigate = useNavigate();
   const [data, setData] = useState({});
+  const [err, setErr] = useState("");
   const [isSignupOpen, setIsSignupOpen] = React.useState(false);
 
   const showSignupModal = () => {
@@ -24,18 +26,27 @@ export default function Login() {
   };
 
   const onSignup = async () => {
-    await axios
-      .post(" http://localhost:1337/api/auth/local", {
+    await publicAxios
+      .post("auth/local", {
         ...data,
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("access_token", response.data.jwt);
+        localStorage.setItem("access_token", response.jwt);
         setData({});
         navigate("/");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setErr("Invalid Credentials");
+      });
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <>
@@ -43,7 +54,7 @@ export default function Login() {
         <div className="login_div">
           <Form onSubmit={onSignup}>
             <h1 style={{ textAlign: "center" }}>Login</h1>
-            <Form.Field>
+            <Form.Field required>
               <label>Email</label>
               <input
                 type="email"
@@ -54,7 +65,7 @@ export default function Login() {
                 onChange={getSignupVal}
               />
             </Form.Field>
-            <Form.Field>
+            <Form.Field required>
               <label>Password</label>
               <input
                 type="password"
@@ -65,6 +76,7 @@ export default function Login() {
                 onChange={getSignupVal}
               />
             </Form.Field>
+            {err ? <p style={{ color: "red" }}>{err}</p> : ""}
             <p
               style={{
                 textAlign: "right",

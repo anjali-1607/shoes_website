@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./styles/Navbar.css";
 import { Menu, Input, Button, Transition } from "semantic-ui-react";
 import Login from "../auth/Login";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { hover } from "@testing-library/user-event/dist/hover";
+import { secureAxios } from "./auth";
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -14,6 +15,23 @@ export default function Navbar() {
   const arr = () => {
     navigate("/arrivals");
   };
+  const checkToken = async () => {
+    await secureAxios
+      .get("users/me")
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  useEffect(() => {
+    if (localStorage.getItem("access_token")) {
+      checkToken();
+    } else {
+    }
+  }, []);
 
   return (
     <div className="menu_div">

@@ -50,13 +50,24 @@ export default function Navbar() {
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
           <div className="login_btn_div">
-            <Button
-              basic
-              onClick={() => {
-                gotologin();
-              }}>
-              Log In
-            </Button>
+            {localStorage.getItem("access_token") ? (
+              <Button
+                basic
+                onClick={() => {
+                  localStorage.removeItem("access_token");
+                  navigate("/login");
+                }}>
+                Log Out
+              </Button>
+            ) : (
+              <Button
+                basic
+                onClick={() => {
+                  gotologin();
+                }}>
+                Log In
+              </Button>
+            )}
           </div>
         </Menu.Menu>
         <Menu.Item icon="user"></Menu.Item>

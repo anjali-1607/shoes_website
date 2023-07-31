@@ -38,6 +38,7 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
       })
       .then((response) => {
         console.log(response);
+        localStorage.setItem("access_token", response.data.jwt);
         setData({});
         navigate("/");
       })

@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./styles/Navbar.css";
-import { Menu, Input, Button, Transition } from "semantic-ui-react";
+import { Menu, Input, Button, Transition, Dropdown } from "semantic-ui-react";
 import Login from "../auth/Login";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import { hover } from "@testing-library/user-event/dist/hover";
 import { secureAxios } from "./auth";
 
 export default function Navbar() {
+  const [name, setName] = useState("");
   const navigate = useNavigate();
   const gotologin = () => {
     navigate("/login");
@@ -20,6 +21,7 @@ export default function Navbar() {
       .get("users/me")
       .then((res) => {
         console.log(res);
+        setName(`${res.first_name} ${res.last_name}`);
       })
       .catch((err) => {
         console.log(err);
@@ -69,14 +71,27 @@ export default function Navbar() {
           </Menu.Item>
           <div className="login_btn_div">
             {localStorage.getItem("access_token") ? (
-              <Button
-                basic
-                onClick={() => {
-                  localStorage.removeItem("access_token");
-                  navigate("/login");
-                }}>
-                Log Out
-              </Button>
+              <>
+                <Dropdown style={{ padding: "1em" }} icon="user" text={name}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item
+                      text="LogOut"
+                      onClick={() => {
+                        localStorage.removeItem("access_token");
+                        navigate("/login");
+                      }}
+                    />
+                    {/* <Button
+                      basic
+                      onClick={() => {
+                        localStorage.removeItem("access_token");
+                        navigate("/login");
+                      }}>
+                      Log Out
+                    </Button> */}
+                  </Dropdown.Menu>
+                </Dropdown>
+              </>
             ) : (
               <Button
                 basic
@@ -88,7 +103,6 @@ export default function Navbar() {
             )}
           </div>
         </Menu.Menu>
-        <Menu.Item icon="user"></Menu.Item>
       </Menu>
     </div>
   );

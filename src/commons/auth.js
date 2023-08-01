@@ -50,7 +50,7 @@ secureAxios.interceptors.response.use(
 
 export function setAuthToken(token) {
   if (token) {
-    secureAxios.defaults.headers.common["Authoriztaion"] = `Bearer ${token}`;
+    secureAxios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
   } else {
     delete secureAxios.defaults.headers.common["Authorization"];
   }

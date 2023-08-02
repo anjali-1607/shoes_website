@@ -1,14 +1,11 @@
 import React from "react";
 import "./Arrivals.css";
-import ArrivalsData from "./ArrivalsData";
-import { Button, Input, Menu } from "semantic-ui-react";
-import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function ArrivalsCard({ name, image, price, rating }) {
-  const navigate = useNavigate();
-  const gotohome = () => {
-    navigate("/");
-  };
+  axios.get("https://shoes-collections.p.rapidapi.com/shoes/3");
+  //
+
   return (
     <>
       <div>
@@ -16,12 +13,23 @@ export default function ArrivalsCard({ name, image, price, rating }) {
           <div className="img_div">
             <img className="image" src={image} />
           </div>
-          <h3 style={{ textAlign: "center", marginTop: "5px" }}>{name}</h3>
+          <h3
+            style={{
+              textAlign: "center",
+              marginTop: " 5px",
+              marginBottom: "-3px",
+            }}>
+            {name}
+          </h3>
           <div className="desc">
-            <h4 style={{ marginLeft: "30px" }}>
+            <h5 style={{ marginLeft: "10px" }}>
               <span style={{ marginRight: "80px" }}>Price-{price}</span>
               <span>Rating{rating}</span>
-            </h4>
+            </h5>
+            <div className="btns">
+              <button className="btn_cart">Add to cart</button>
+              <button className="btn_buy">Buy Now</button>
+            </div>
           </div>
         </div>
       </div>

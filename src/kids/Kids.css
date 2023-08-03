@@ -1,0 +1,52 @@
+.card_manager {
+  /* margin: 3em; */
+  padding: 0 2em 0 2em;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2px;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  margin: 2em 0 8em 0;
+  border-radius: 1em;
+  background-color: #ececec;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
+    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
+    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+.image {
+  width: 250px;
+  height: 280px;
+  border-radius: 1em 1em 0 0;
+}
+.img_div {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  /* margin-top: 10px; */
+}
+.desc {
+  width: 250px;
+  height: 50px;
+  margin-top: 5px;
+  background-color: rgb(231, 231, 231);
+}
+.btns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-top: -8px;
+}
+.btn_cart {
+  padding: 4px 2px 4px 2px;
+  border: none;
+  cursor: pointer;
+  background-color: #ff7130;
+}
+.btn_buy {
+  padding: 4px 2px 4px 2px;
+  border: none;
+  cursor: pointer;
+  background-color: #fffb1b;
+}

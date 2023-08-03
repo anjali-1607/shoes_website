@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Navbar.css";
 import { Menu, Input, Button, Transition, Dropdown } from "semantic-ui-react";
-import Login from "../auth/Login";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
-import { hover } from "@testing-library/user-event/dist/hover";
+import { useLocation, useNavigate } from "react-router-dom";
 import { secureAxios } from "./auth";
 
 export default function Navbar() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
   const gotologin = () => {
     navigate("/login");
   };
-  const arr = () => {
-    navigate("/arrivals");
-  };
+
   const checkToken = async () => {
     await secureAxios
       .get("users/me")
@@ -41,25 +38,35 @@ export default function Navbar() {
         <Menu.Item
           className="menu"
           name="Home"
+          active={location.pathname === "/" ? true : false}
           onClick={() => {
             navigate("/");
           }}
         />
-        <Menu.Item name="New Arrivals" onClick={arr} />
+        <Menu.Item
+          name="New Arrivals"
+          active={location.pathname === "/arrivals" ? true : false}
+          onClick={() => {
+            navigate("/arrivals");
+          }}
+        />
         <Menu.Item
           name="Men"
+          active={location.pathname === "/men" ? true : false}
           onClick={() => {
             navigate("/men");
           }}
         />
         <Menu.Item
           name="Women"
+          active={location.pathname === "/women" ? true : false}
           onClick={() => {
             navigate("/women");
           }}
         />
         <Menu.Item
           name="Kids"
+          active={location.pathname === "/kids" ? true : false}
           onClick={() => {
             navigate("/kids");
           }}

@@ -3,7 +3,7 @@ import React from "react";
 export default function WomenCard({ name, image, price, rating }) {
   return (
     <>
-      <div>
+      <div style={{ margin: "0.5em" }}>
         <div className="card">
           <div className="img_div">
             <img className="image" src={`http://localhost:1337${image}`} />

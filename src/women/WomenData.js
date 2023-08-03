@@ -1,41 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Women.css";
 import Navbar from "../commons/Navbar";
 import WomenCard from "./WomenCard";
+import { publicAxios } from "../commons/auth";
 
 export default function WomenData() {
-  const data = [
-    {
-      img: "	https://img.joomcdn.net/aa062f9bdf1e8979464f108f182a2f8eb2379c61_original.jpeg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "	https://img.joomcdn.net/aa062f9bdf1e8979464f108f182a2f8eb2379c61_original.jpeg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "	https://img.joomcdn.net/aa062f9bdf1e8979464f108f182a2f8eb2379c61_original.jpeg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "	https://img.joomcdn.net/aa062f9bdf1e8979464f108f182a2f8eb2379c61_original.jpeg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "	https://img.joomcdn.net/aa062f9bdf1e8979464f108f182a2f8eb2379c61_original.jpeg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    await publicAxios
+      .get(
+        "products?populate=*&filters[category][Name][$eq]=Women&pagination[limit]=1000"
+      )
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -45,10 +30,10 @@ export default function WomenData() {
           console.log(e);
           return (
             <WomenCard
-              image={e.img}
-              name={e.name}
-              price={e.price}
-              rating={e.rating}
+              image={e.attributes.image.data[0].attributes.url}
+              name={e.attributes.name}
+              price={e.attributes.price}
+              rating={e.attributes.size}
             />
           );
         })}

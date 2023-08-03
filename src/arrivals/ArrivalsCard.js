@@ -25,7 +25,7 @@ export default function ArrivalsCard({ name, image, price, rating }) {
           <div className="desc">
             <h5 style={{ marginLeft: "10px" }}>
               <span style={{ marginRight: "80px" }}>Price-{price}</span>
-              <span>Rating{rating}</span>
+              <span>Size-{rating}</span>
             </h5>
             <div className="btns">
               <button className="btn_cart">Add to cart</button>

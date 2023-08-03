@@ -1,43 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Men.css";
 
 import Navbar from "../commons/Navbar";
 import MenCards from "./MenCards";
+import { publicAxios } from "../commons/auth";
 
 export default function MenData() {
-  const data = [
-    {
-      img: "https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://5.imimg.com/data5/ANDROID/Default/2021/6/UH/ZG/GC/120280019/img-20210624-wa0351-jpg.jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-  ];
+  const [data, setData] = useState([]);
 
+  const getData = async () => {
+    await publicAxios
+      .get(
+        "products?populate=*&filters[category][Name][$eq]=Men&pagination[limit]=1000"
+      )
+
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <>
       <Navbar />
@@ -46,10 +31,10 @@ export default function MenData() {
           console.log(e);
           return (
             <MenCards
-              image={e.img}
-              name={e.name}
-              price={e.price}
-              rating={e.rating}
+              image={e.attributes.image.data[0].attributes.url}
+              name={e.attributes.name}
+              price={e.attributes.price}
+              rating={e.attributes.size}
             />
           );
         })}

@@ -1,59 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Arrivals.css";
 import ArrivalsCard from "./ArrivalsCard";
 import Navbar from "../commons/Navbar";
+import { publicAxios } from "../commons/auth";
 
 export default function ArrivalsData() {
-  const data = [
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-    {
-      img: "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
-      name: "Nike",
-      price: "₹2500",
-      rating: "4/5",
-    },
-  ];
+  const [data, setData] = useState([]);
+
+  const getData = async () => {
+    await publicAxios
+      .get("products?populate=category.,image.&pagination[limit]=100")
+      .then((res) => {
+        // console.log(res.data);
+        setData(res.data);
+      });
+  };
+
+  useEffect(() => {
+    getData();
+  }, []);
 
   return (
     <>
@@ -63,10 +28,10 @@ export default function ArrivalsData() {
           console.log(e);
           return (
             <ArrivalsCard
-              image={e.img}
-              name={e.name}
-              price={e.price}
-              rating={e.rating}
+              image={e.attributes.image.data[0].attributes.url}
+              name={e.attributes.name}
+              price={e.attributes.price}
+              rating={e.attributes.size}
             />
           );
         })}

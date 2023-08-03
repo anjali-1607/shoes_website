@@ -1,17 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Arrivals.css";
 import axios from "axios";
 
 export default function ArrivalsCard({ name, image, price, rating }) {
-  axios.get("https://shoes-collections.p.rapidapi.com/shoes/3");
-  //
+  // axios.get("http://localhost:1337/api/products").then((res) => {
+  //   console.log(res);
+  // });
 
   return (
     <>
       <div>
         <div className="card">
           <div className="img_div">
-            <img className="image" src={image} />
+            <img className="image" src={`http://localhost:1337${image}`} />
           </div>
           <h3
             style={{

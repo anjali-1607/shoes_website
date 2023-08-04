@@ -3,6 +3,7 @@ import "./Arrivals.css";
 import ArrivalsCard from "./ArrivalsCard";
 import Navbar from "../commons/Navbar";
 import { publicAxios } from "../commons/auth";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function ArrivalsData() {
   const [data, setData] = useState([]);

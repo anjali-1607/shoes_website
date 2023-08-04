@@ -11,6 +11,7 @@ import MenCards from "./men/MenCards";
 import MenData from "./men/MenData";
 import WomenData from "./women/WomenData";
 import KidsData from "./kids/KidsData";
+import Description from "./description/Description";
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
         <Route path="/men" element={<MenData />} />
         <Route path="/women" element={<WomenData />} />
         <Route path="/kids" element={<KidsData />} />
+        <Route path="/desc" element={<Description />} />
       </Routes>
     </Router>
   );

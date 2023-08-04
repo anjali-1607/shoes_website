@@ -1,12 +1,10 @@
 import React, { useEffect } from "react";
 import "./Arrivals.css";
 import axios from "axios";
+import Description from "../description/Description";
+import { useNavigate } from "react-router-dom";
 
 export default function ArrivalsCard({ name, image, price, rating }) {
-  // axios.get("http://localhost:1337/api/products").then((res) => {
-  //   console.log(res);
-  // });
-
   return (
     <>
       <div style={{ margin: "0.5em" }}>

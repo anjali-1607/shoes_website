@@ -1,18 +1,11 @@
-/* body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-} */
-
 .login_btn_div {
-  /* margin-top: 5px; */
   display: flex;
   flex-direction: column;
-
   justify-content: center;
 }
 .menu_div {
-  /* position: fixed; */
+  position: sticky;
+  top: 0px;
   z-index: 9;
   background-color: aliceblue;
 }

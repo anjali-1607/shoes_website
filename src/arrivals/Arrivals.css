@@ -1,13 +1,13 @@
-body {
-  background-color: #fbbd08;
-}
-
 .card_manager {
   /* margin: 3em; */
-  padding: 0 2em 0 2em;
-  display: grid;
+  padding: 0 1em 0 1em;
+  /* display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 2px;
+  grid-gap: 2px; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .card {

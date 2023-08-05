@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import SliderCards from "./SliderCards";
 import "./Slider.css";
-import { Carousel } from "react-responsive-carousel";
 
 export default function Slider() {
   const [currentIndex, setCurrentIndex] = useState();

@@ -3,16 +3,17 @@ import "./Arrivals.css";
 import ArrivalsCard from "./ArrivalsCard";
 import Navbar from "../commons/Navbar";
 import { publicAxios } from "../commons/auth";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Router, Switch, useNavigate } from "react-router-dom";
 
 export default function ArrivalsData() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
       .get("products?populate=category.,image.&pagination[limit]=100")
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         setData(res.data);
       });
   };
@@ -26,14 +27,21 @@ export default function ArrivalsData() {
       <Navbar />
       <div className="card_manager">
         {data.map((e) => {
-          console.log(e);
+          // console.log(e);
           return (
-            <ArrivalsCard
-              image={e.attributes.image.data[0].attributes.url}
-              name={e.attributes.name}
-              price={e.attributes.price}
-              rating={e.attributes.size}
-            />
+            <>
+              <div
+                onClick={() => {
+                  navigate(`/product-details/${e.id}`);
+                }}>
+                <ArrivalsCard
+                  image={e.attributes.image.data[0].attributes.url}
+                  name={e.attributes.name}
+                  price={e.attributes.price}
+                  rating={e.attributes.size}
+                />
+              </div>
+            </>
           );
         })}
       </div>

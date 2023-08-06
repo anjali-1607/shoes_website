@@ -23,7 +23,7 @@ export default function App() {
         <Route path="/men" element={<MenData />} />
         <Route path="/women" element={<WomenData />} />
         <Route path="/kids" element={<KidsData />} />
-        <Route path="/desc" element={<Description />} />
+        <Route path="/product-details/:id" element={<Description />} />
       </Routes>
     </Router>
   );

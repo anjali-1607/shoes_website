@@ -1,0 +1,23 @@
+.desc_grand {
+  width: 100%;
+  height: auto;
+  /* background-color: #e7e7e7; */
+  /* margin: 1em 0; */
+  padding: 2em;
+  display: flex;
+}
+.product_img {
+  /* width: 550px; */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  background-color: #fff;
+  margin: 2em 10em;
+}
+.image_product {
+  width: 30em;
+  height: 30em;
+}
+.desc_div {
+  width: auto;
+}

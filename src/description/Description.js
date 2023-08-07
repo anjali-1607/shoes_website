@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "./styles/Description.css";
 import { publicAxios } from "../commons/auth";
 
-export default function Description({ name, image, price, rating }) {
+export default function Description({ name, image, price, rating, desc }) {
   return (
     <>
       <div className="desc_grand">
@@ -18,7 +18,11 @@ export default function Description({ name, image, price, rating }) {
           <h1>{name}</h1>
           <h5>{price}</h5>
           <h5> {rating} </h5>
+          <p>{desc}</p>
+          <button className="btn_cartt">Add to cart</button>
+          <button className="btn_buyy">Buy Now</button>
         </div>
+        <div></div>
       </div>
     </>
   );

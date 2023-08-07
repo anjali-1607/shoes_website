@@ -7,11 +7,11 @@
   display: flex;
 }
 .product_img {
-  /* width: 550px; */
+  width: 550px;
   align-items: center;
   justify-content: center;
   display: flex;
-  background-color: #fff;
+  background-color: #ffffff;
   margin: 2em 10em;
 }
 .image_product {
@@ -20,4 +20,15 @@
 }
 .desc_div {
   width: auto;
+  margin: 2em 0;
+}
+.btn_cartt {
+  margin-right: 3em;
+  padding: 5px;
+  cursor: pointer;
+}
+.btn_buyy {
+  /* margin-right: 3em; */
+  padding: 5px;
+  cursor: pointer;
 }

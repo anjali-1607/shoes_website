@@ -6,22 +6,25 @@ import { publicAxios } from "../commons/auth";
 
 export default function DescriptionData() {
   const [data, setData] = useState([]);
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState([]);
   const { id: productId } = useParams();
   console.log(productId);
-
+  console.log(data);
   const getData = async () => {
-    try {
-      const response = await publicAxios.get(
-        `products?populate=category.,image.${productId}`
-      );
-
-      if (response.data && response.data.length > 0) {
-        setProduct(response.data[0]);
-      }
-    } catch (error) {
-      console.error("Error fetching product data:", error);
-    }
+    await publicAxios
+      .get(`products/${productId}?populate=category.,image.`)
+      .then((res) => {
+        console.log(res.data);
+        setData(res.data);
+      });
+    // try {
+    //   const response = await publicAxios.get(
+    //     `products?populate=category.,image.${productId}`
+    //   );
+    //   setProduct(response.data[0]);
+    // } catch (error) {
+    //   console.error("Error fetching product data:", error);
+    // }
   };
   useEffect(() => {
     getData();
@@ -31,14 +34,13 @@ export default function DescriptionData() {
     <>
       <Navbar />
       <div>
-        {product && (
-          <Description
-            image={product.attributes.image.data[0].attributes.url}
-            name={product.attributes.name}
-            price={product.attributes.price}
-            rating={product.attributes.size}
-          />
-        )}
+        <Description
+          image={data?.attributes?.image?.data[0]?.attributes.url}
+          name={data?.attributes?.name}
+          price={data?.attributes?.price}
+          rating={data?.attributes?.size}
+          desc={data?.attributes?.description}
+        />
       </div>
     </>
   );

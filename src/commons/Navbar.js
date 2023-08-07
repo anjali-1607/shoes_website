@@ -1,8 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./styles/Navbar.css";
-import { Menu, Input, Button, Transition, Dropdown } from "semantic-ui-react";
+import {
+  Menu,
+  Input,
+  Button,
+  Transition,
+  Dropdown,
+  Icon,
+} from "semantic-ui-react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { secureAxios } from "./auth";
+import { isCursorAtEnd } from "@testing-library/user-event/dist/utils";
 
 export default function Navbar() {
   const [name, setName] = useState("");
@@ -76,6 +84,9 @@ export default function Navbar() {
           <Menu.Item>
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
+          <div style={{ marginTop: "12px", cursor: "pointer" }}>
+            <Icon name="cart arrow down" size="large"></Icon>
+          </div>
           <div className="login_btn_div">
             {localStorage.getItem("access_token") ? (
               <>

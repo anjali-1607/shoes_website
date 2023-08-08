@@ -3,9 +3,11 @@ import "./Women.css";
 import Navbar from "../commons/Navbar";
 import WomenCard from "./WomenCard";
 import { publicAxios } from "../commons/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function WomenData() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
@@ -29,12 +31,20 @@ export default function WomenData() {
         {data.map((e) => {
           console.log(e);
           return (
-            <WomenCard
-              image={e.attributes.image.data[0].attributes.url}
-              name={e.attributes.name}
-              price={e.attributes.price}
-              rating={e.attributes.size}
-            />
+            <>
+              <div
+                onClick={() => {
+                  navigate(`/product-details/${e.id}`);
+                }}>
+                {" "}
+                <WomenCard
+                  image={e.attributes.image.data[0].attributes.url}
+                  name={e.attributes.name}
+                  price={e.attributes.price}
+                  rating={e.attributes.size}
+                />
+              </div>
+            </>
           );
         })}
       </div>

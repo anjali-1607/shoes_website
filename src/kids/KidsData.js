@@ -2,9 +2,11 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../commons/Navbar";
 import KidsCard from "./KidsCard";
 import { publicAxios } from "../commons/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function KidsData() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
@@ -28,12 +30,20 @@ export default function KidsData() {
         {data.map((e) => {
           console.log(e);
           return (
-            <KidsCard
-              image={e.attributes.image.data[0].attributes.url}
-              name={e.attributes.name}
-              price={e.attributes.price}
-              rating={e.attributes.size}
-            />
+            <>
+              <div
+                onClick={() => {
+                  navigate(`/product-details/${e.id}`);
+                }}>
+                {" "}
+                <KidsCard
+                  image={e.attributes.image.data[0].attributes.url}
+                  name={e.attributes.name}
+                  price={e.attributes.price}
+                  rating={e.attributes.size}
+                />
+              </div>
+            </>
           );
         })}
       </div>

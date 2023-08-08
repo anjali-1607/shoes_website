@@ -4,9 +4,11 @@ import "./Men.css";
 import Navbar from "../commons/Navbar";
 import MenCards from "./MenCards";
 import { publicAxios } from "../commons/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function MenData() {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
@@ -30,12 +32,19 @@ export default function MenData() {
         {data.map((e) => {
           console.log(e);
           return (
-            <MenCards
-              image={e.attributes.image.data[0].attributes.url}
-              name={e.attributes.name}
-              price={e.attributes.price}
-              rating={e.attributes.size}
-            />
+            <>
+              <div
+                onClick={() => {
+                  navigate(`/product-details/${e.id}`);
+                }}>
+                <MenCards
+                  image={e.attributes.image.data[0].attributes.url}
+                  name={e.attributes.name}
+                  price={e.attributes.price}
+                  rating={e.attributes.size}
+                />
+              </div>
+            </>
           );
         })}
       </div>

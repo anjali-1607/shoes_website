@@ -102,7 +102,30 @@ export default function MyCart({ name, image, price, rating, desc }) {
             <div className="delivery_div">Delivery by Sat Aug 12 | Free</div>
           </div>
         </div>
-        <div className="price_div"></div>
+        <div className="price_div">
+          <div className="price_details">PRICE DETAILS</div>
+          <div className="details_right_div">
+            <div className="price">
+              Price
+              <div style={{ marginLeft: "18em" }}>₹600</div>
+            </div>
+            <div className="price">
+              Discount <div style={{ marginLeft: "16.5em" }}>₹600</div>
+            </div>
+            <div className="price">
+              Sale Free <div style={{ marginLeft: "16em" }}>₹600</div>
+            </div>
+            <div className="price">
+              Delivery Charges <div style={{ marginLeft: "13em" }}>Free</div>
+            </div>
+            <div className="total_amount">
+              Total Amount <div style={{ marginLeft: "11em" }}>₹1200</div>{" "}
+            </div>
+            <div className="save_rupees">
+              You will save ₹1,990 on this order
+            </div>
+          </div>
+        </div>
 
         {/* <div className="product_img">
           <img

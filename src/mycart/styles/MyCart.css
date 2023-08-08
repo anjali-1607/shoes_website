@@ -27,22 +27,41 @@
   height: 4em;
   margin-bottom: 0.5em;
   background-color: rgb(255, 255, 255);
+  align-items: center;
+  display: flex;
+  padding-left: 2em;
+  padding-right: 10em;
+  font-family: Gill Sans, sans-serif;
+  /* font-size: 15px; */
 }
-.myaddress {
+.second_div {
   width: auto;
   height: 4em;
   margin-bottom: 0.5em;
+  align-items: center;
+  display: flex;
+  padding-left: 2em;
   background-color: rgb(255, 255, 255);
 }
+.pincode_btn {
+  margin-left: 33em;
+  padding: 8px;
+  background-color: #ffffff;
+  color: #166bfe;
+  border: 1px solid rgb(212, 212, 212);
+  cursor: pointer;
+}
+
 .cart_product {
   width: auto;
-  height: 40em;
-  padding: 1em;
+  height: auto;
+  padding: 1em 1em 0 1em;
   margin-bottom: 0.5em;
   background-color: rgb(255, 255, 255);
   display: flex;
+  border-bottom: 1px solid rgb(212, 212, 212);
 }
-.image_product {
+.images_product {
   width: 10em;
   height: 10em;
   margin-right: 1.5em;
@@ -90,6 +109,10 @@
   width: 20em;
   height: 10em;
   margin-right: 1.5em;
+  font-family: Gill Sans, sans-serif;
+  font-size: 14px;
+  color: #3e3e3e;
+  margin-top: "6px";
 }
 
 /* .product_img {

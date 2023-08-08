@@ -9,12 +9,18 @@ export default function MyCart({ name, image, price, rating, desc }) {
       <Navbar />
       <div className="desc_grand">
         <div className="item_div">
-          <div className="myshoes">My Shoes</div>
-          <div className="myaddress">From Saved Addresses</div>
+          <div className="myshoes">
+            {" "}
+            <h3>My Shoes</h3>{" "}
+          </div>
+          <div className="second_div">
+            <div className="myaddress">From Saved Addresses</div>
+            <button className="pincode_btn">Enter Delievery Pincode</button>
+          </div>
           <div className="cart_product">
             <div>
               <img
-                className="image_product"
+                className="images_product"
                 src={`http://localhost:1337${image}`}></img>
               <div className="counter">
                 {count >= 2 ? (
@@ -47,7 +53,52 @@ export default function MyCart({ name, image, price, rating, desc }) {
                 </button>
               </div>
             </div>
-            <div className="details_div">ADidas Black 600</div>
+            <div className="details_div">
+              <div
+                style={{
+                  fontFamily: "Gill Sans, sans-serif",
+                  fontSize: "20px",
+                  marginBottom: "2px",
+                }}>
+                Adidas
+              </div>
+              <div
+                style={{
+                  fontFamily: "Gill Sans, sans-serif",
+                  fontSize: "14px",
+                  color: "#808080",
+                }}>
+                Lorem nshfu dushfu ighdug ufhg 9us drftyejhn ujrfighsd{" "}
+              </div>
+              <div
+                style={{
+                  fontFamily: "Gill Sans, sans-serif",
+                  fontSize: "14px",
+                  color: "#808080",
+                  marginTop: "6px",
+                }}>
+                Seller
+              </div>
+              <div
+                style={{
+                  fontFamily: "Gill Sans, sans-serif",
+                  fontSize: "18px",
+                  color: "black",
+                  marginTop: "8px",
+                }}>
+                ₹600
+              </div>
+              <div
+                style={{
+                  fontFamily: "Gill Sans, sans-serif",
+                  fontSize: "18px",
+                  color: "black",
+                  marginTop: "22px",
+                  cursor: "pointer",
+                }}>
+                Remove
+              </div>
+            </div>
             <div className="delivery_div">Delivery by Sat Aug 12 | Free</div>
           </div>
         </div>

@@ -85,7 +85,12 @@ export default function Navbar() {
             <Input icon="search" placeholder="Search..." />
           </Menu.Item>
           <div style={{ marginTop: "12px", cursor: "pointer" }}>
-            <Icon name="cart arrow down" size="large"></Icon>
+            <Icon
+              name="cart arrow down"
+              size="large"
+              onClick={() => {
+                navigate("/mycart");
+              }}></Icon>
           </div>
           <div className="login_btn_div">
             {localStorage.getItem("access_token") ? (

@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
-import Navbar from "../commons/Navbar";
-import { useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useNavigate, useParams } from "react-router-dom";
 import "./styles/Description.css";
-import { publicAxios } from "../commons/auth";
 
 export default function Description({ name, image, price, rating, desc }) {
+  const showToastMessage = () => {
+    console.log("abc");
+    toast.success("Successfully Added to Cart ", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+  };
   return (
     <>
+      <ToastContainer />
       <div className="desc_grand">
         <div className="product_img">
           <img
@@ -19,7 +26,14 @@ export default function Description({ name, image, price, rating, desc }) {
           <h5>{price}</h5>
           <h5> {rating} </h5>
           <p>{desc}</p>
-          <button className="btn_cartt">Add to cart</button>
+          <button
+            className="btn_cartt"
+            onClick={() => {
+              showToastMessage();
+            }}>
+            Add to cart
+          </button>
+
           <button className="btn_buyy">Buy Now</button>
         </div>
         <div></div>

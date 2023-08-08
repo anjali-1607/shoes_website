@@ -13,6 +13,7 @@ import WomenData from "./women/WomenData";
 import KidsData from "./kids/KidsData";
 import Description from "./description/Description";
 import DescriptionData from "./description/DescriptionData";
+import MyCart from "./mycart/MyCart";
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/women" element={<WomenData />} />
         <Route path="/kids" element={<KidsData />} />
         <Route path="/product-details/:id" element={<DescriptionData />} />
+        <Route path="/mycart" element={<MyCart />} />
       </Routes>
     </Router>
   );

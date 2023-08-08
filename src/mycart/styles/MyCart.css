@@ -5,12 +5,13 @@
   /* margin: 1.5em 0; */
   padding: 1.5em 8em;
   display: flex;
+  flex-wrap: wrap;
 }
 .item_div {
   width: 60em;
   height: 50em;
   margin: 0 1.5em;
-  background-color: rgb(255, 255, 255);
+  background-color: #e7e7e7;
   border-radius: 5px;
   border: 1px solid rgb(212, 212, 212);
 }
@@ -21,6 +22,76 @@
   border-radius: 5px;
   border: 1px solid rgb(212, 212, 212);
 }
+.myshoes {
+  width: auto;
+  height: 4em;
+  margin-bottom: 0.5em;
+  background-color: rgb(255, 255, 255);
+}
+.myaddress {
+  width: auto;
+  height: 4em;
+  margin-bottom: 0.5em;
+  background-color: rgb(255, 255, 255);
+}
+.cart_product {
+  width: auto;
+  height: 40em;
+  padding: 1em;
+  margin-bottom: 0.5em;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+}
+.image_product {
+  width: 10em;
+  height: 10em;
+  margin-right: 1.5em;
+}
+.counter {
+  width: 10em;
+  height: 3em;
+  margin-right: 1.5em;
+  margin-top: 5px;
+  display: flex;
+  padding: 0 10px;
+  background: #ffffff;
+}
+.btn_minus {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 1px solid rgb(185, 185, 185);
+  cursor: pointer;
+}
+.numbers {
+  width: 3em;
+  height: 2em;
+  background-color: aliceblue;
+  margin: 0 0.5em;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border: 1px solid rgb(185, 185, 185);
+  border-radius: 5px;
+}
+.btn_plus {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  border: 1px solid rgb(185, 185, 185);
+  cursor: pointer;
+}
+.details_div {
+  width: 35em;
+  height: 10em;
+  margin-right: 1.5em;
+}
+.delivery_div {
+  width: 20em;
+  height: 10em;
+  margin-right: 1.5em;
+}
+
 /* .product_img {
   width: 550px;
   align-items: center;
@@ -28,10 +99,6 @@
   display: flex;
   background-color: #ffffff;
   margin: 2em 10em;
-}
-.image_product {
-  width: 30em;
-  height: 30em;
 }
 .desc_div {
   width: auto;

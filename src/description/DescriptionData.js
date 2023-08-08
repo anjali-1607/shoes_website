@@ -38,7 +38,7 @@ export default function DescriptionData() {
           image={data?.attributes?.image?.data[0]?.attributes.url}
           name={data?.attributes?.name}
           price={data?.attributes?.price}
-          rating={data?.attributes?.size}
+          size={data?.attributes?.size}
           desc={data?.attributes?.description}
         />
       </div>

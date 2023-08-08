@@ -7,7 +7,7 @@ export default function MyCart({ name, image, price, rating, desc }) {
   return (
     <>
       <Navbar />
-      <div className="desc_grand">
+      <div className="cart_grand">
         <div className="item_div">
           <div className="myshoes">
             {" "}

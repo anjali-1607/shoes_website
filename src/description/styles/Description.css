@@ -3,17 +3,14 @@
   height: auto;
   background-color: #e7e7e7;
   /* margin: 1em 0; */
-
   padding: 1em 7em;
   display: flex;
   flex-wrap: wrap;
 }
+
 .product_img_1 {
   width: 30em;
   height: 35em;
-  /* align-items: center;
-  justify-content: center; */
-  /* display: flex; */
   background-color: #ffffff;
   margin: 0.3em;
   border-radius: 5px;
@@ -53,7 +50,6 @@
   background-color: #fff;
   border: 1px solid rgb(218, 218, 218);
   border-radius: 5px;
-
   position: relative;
 }
 .price__div {

@@ -40,6 +40,7 @@ export default function DescriptionData() {
           price={data?.attributes?.price}
           size={data?.attributes?.size}
           desc={data?.attributes?.description}
+          id={productId}
         />
       </div>
     </>

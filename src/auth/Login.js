@@ -33,6 +33,7 @@ export default function Login() {
       .then((response) => {
         console.log(response);
         localStorage.setItem("access_token", response.jwt);
+        localStorage.setItem("user_id", response.user.id);
         setData({});
         navigate("/");
       })

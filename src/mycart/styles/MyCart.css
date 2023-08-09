@@ -5,11 +5,11 @@
   /* margin: 1.5em 0; */
   padding: 1.5em 5em;
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 .item_div {
   width: 60em;
-  height: 50em;
+  height: auto;
   margin: 0 1em;
   background-color: #e7e7e7;
   border-radius: 5px;
@@ -21,6 +21,8 @@
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: 1px solid rgb(212, 212, 212);
+  position: sticky;
+  top: 0;
 }
 .myshoes {
   width: auto;

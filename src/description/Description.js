@@ -4,14 +4,31 @@ import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, useParams } from "react-router-dom";
 import "./styles/Description.css";
 import { Button, Icon } from "semantic-ui-react";
+import { publicAxios } from "../commons/auth";
 
-export default function Description({ name, image, price, size, desc }) {
+export default function Description({ name, image, price, id, desc }) {
+  // const { id } = useParams();
   const showToastMessage = () => {
-    console.log("abc");
     toast.success("Successfully Added to Cart ", {
       position: toast.POSITION.BOTTOM_RIGHT,
     });
   };
+
+  const postValue = async () => {
+    console.log("anjali");
+    const userId = localStorage.getItem("user_id");
+    await publicAxios
+      .put(`products/${id}`, {
+        data: {
+          users: [userId],
+        },
+      })
+      .then((res) => {
+        console.log(res.data);
+        showToastMessage();
+      });
+  };
+
   return (
     <>
       <ToastContainer />
@@ -78,9 +95,11 @@ export default function Description({ name, image, price, size, desc }) {
             <Button
               color="instagram"
               size="big"
-              onClick={() => {
-                showToastMessage();
-              }}>
+              onClick={postValue}
+              // onClick={() => {
+              //   showToastMessage();
+              // }}
+            >
               <Icon name="cart" /> Add to Cart
             </Button>
             <Button color="instagram" size="big" style={{ marginLeft: "1em" }}>
@@ -88,27 +107,6 @@ export default function Description({ name, image, price, size, desc }) {
             </Button>
           </div>
         </div>
-        {/* <div className="product_img">
-          <img
-            className="image_product"
-            src={`http://localhost:1337${image}`}
-          />
-        </div>
-        <div className="desc_div">
-          <h1>{name}</h1>
-          <h5>{price}</h5>
-          <h5> {rating} </h5>
-          <p>{desc}</p>
-          <button
-            className="btn_cartt"
-            onClick={() => {
-              showToastMessage();
-            }}>
-            Add to cart
-          </button>
-
-          <button className="btn_buyy">Buy Now</button>
-        </div> */}
       </div>
     </>
   );

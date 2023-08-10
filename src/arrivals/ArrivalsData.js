@@ -38,7 +38,7 @@ export default function ArrivalsData() {
                   image={e.attributes.image.data[0].attributes.url}
                   name={e.attributes.name}
                   price={e.attributes.price}
-                  rating={e.attributes.size}
+                  size={e.attributes.size}
                 />
               </div>
             </>

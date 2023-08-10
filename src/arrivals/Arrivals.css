@@ -1,5 +1,5 @@
 .card_manager {
-  /* margin: 3em; */
+  /* margin: 1em; */
   padding: 0 1em 0 1em;
   /* display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -8,6 +8,13 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+}
+.grand_product_div {
+  width: 20em;
+  height: 25em;
+  background-color: green;
+  margin: 5px;
+  border: 1px solid rgb(218, 218, 218);
 }
 
 .card {
@@ -21,19 +28,53 @@
     rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
-.card:hover {
+/* .card:hover {
   transform: scale(1.1);
-}
-.image {
-  width: 250px;
-  height: 280px;
-  border-radius: 1em 1em 0 0;
+} */
+.product__image {
+  width: 20em;
+  height: 20em;
 }
 .img_div {
-  align-items: center;
-  justify-content: center;
+  width: 20em;
+  height: 20em;
+  background-color: #6e6e6e;
+}
+.pro_data {
+  width: 20em;
+  height: 5em;
+  background-color: #ececec;
+  padding: 2px;
+}
+.button_arr {
   display: flex;
-  /* margin-top: 10px; */
+}
+.name_arr_div {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  /* font-weight: 500; */
+  font-size: 16px;
+}
+.price_arr_div {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 17px;
+  font-weight: bold;
+}
+.cart_arr_btn {
+  padding: 6px 10px;
+  background-color: #49769c;
+  color: #fff;
+  border: 1px solid rgb(171, 171, 171);
+  border-radius: 4px;
+  cursor: pointer;
+}
+.buy_arr_btn {
+  padding: 6px 10px;
+  background-color: #49769c;
+  color: #fff;
+  border: 1px solid rgb(171, 171, 171);
+  cursor: pointer;
+  margin-left: 7em;
+  border-radius: 4px;
 }
 .desc {
   width: 250px;
@@ -46,6 +87,7 @@
   grid-template-columns: repeat(2, 1fr);
   margin-top: -8px;
 }
+
 .btn_cart {
   padding: 4px 2px 4px 2px;
   border: none;

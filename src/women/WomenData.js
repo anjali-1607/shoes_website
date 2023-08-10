@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Women.css";
 import Navbar from "../commons/Navbar";
 import WomenCard from "./WomenCard";
 import { publicAxios } from "../commons/auth";

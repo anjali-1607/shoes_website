@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./Men.css";
-
 import Navbar from "../commons/Navbar";
 import MenCards from "./MenCards";
 import { publicAxios } from "../commons/auth";

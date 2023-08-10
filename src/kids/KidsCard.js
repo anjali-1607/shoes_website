@@ -1,5 +1,4 @@
 import React from "react";
-import "./Kids.css";
 
 export default function KidsCard({ name, image, price, rating }) {
   return (

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Men.css";
 
 export default function MenCards({ name, image, price, rating }) {
   return (

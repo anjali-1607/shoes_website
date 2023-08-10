@@ -17,20 +17,6 @@
   border: 1px solid rgb(218, 218, 218);
 }
 
-.card {
-  width: 250px;
-  height: 250px;
-  margin: 2em 0 8em 0;
-  border-radius: 1em;
-  cursor: pointer;
-  background-color: #ececec;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px,
-    rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px,
-    rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-}
-/* .card:hover {
-  transform: scale(1.1);
-} */
 .product__image {
   width: 20em;
   height: 20em;
@@ -75,28 +61,4 @@
   cursor: pointer;
   margin-left: 7em;
   border-radius: 4px;
-}
-.desc {
-  width: 250px;
-  height: 50px;
-  margin-top: 5px;
-  background-color: rgb(231, 231, 231);
-}
-.btns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  margin-top: -8px;
-}
-
-.btn_cart {
-  padding: 4px 2px 4px 2px;
-  border: none;
-  cursor: pointer;
-  background-color: #ff7130;
-}
-.btn_buy {
-  padding: 4px 2px 4px 2px;
-  border: none;
-  cursor: pointer;
-  background-color: #fffb1b;
 }

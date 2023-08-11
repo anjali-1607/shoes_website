@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useNavigate, useParams } from "react-router-dom";
 import "./styles/Description.css";
 import { Button, Icon } from "semantic-ui-react";
 import { publicAxios } from "../commons/auth";
@@ -92,14 +91,7 @@ export default function Description({ name, image, price, id, desc }) {
             </div>
           </div>
           <div className="btns__div">
-            <Button
-              color="instagram"
-              size="big"
-              onClick={postValue}
-              // onClick={() => {
-              //   showToastMessage();
-              // }}
-            >
+            <Button color="instagram" size="big" onClick={postValue}>
               <Icon name="cart" /> Add to Cart
             </Button>
             <Button color="instagram" size="big" style={{ marginLeft: "1em" }}>

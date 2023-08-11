@@ -7,7 +7,6 @@ import { Router, Switch, useNavigate } from "react-router-dom";
 
 export default function ArrivalsData() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
@@ -30,15 +29,13 @@ export default function ArrivalsData() {
           // console.log(e);
           return (
             <>
-              <div
-                onClick={() => {
-                  navigate(`/product-details/${e.id}`);
-                }}>
+              <div>
                 <ArrivalsCard
                   image={e.attributes.image.data[0].attributes.url}
                   name={e.attributes.name}
                   price={e.attributes.price}
                   size={e.attributes.size}
+                  id={e.id}
                 />
               </div>
             </>

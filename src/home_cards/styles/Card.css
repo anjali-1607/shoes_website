@@ -19,6 +19,7 @@
 }
 .card_div:hover {
   transform: scale(1.1);
+  /* transition: 0.5s ease-in-out; */
 }
 .image_div {
   width: inherit;

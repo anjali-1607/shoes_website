@@ -111,7 +111,8 @@
 .delivery_div {
   width: 20em;
   height: 10em;
-  margin-right: 1.5em;
+  /* margin-right: 1.5em; */
+  justify-content: flex-end;
   font-family: Gill Sans, sans-serif;
   font-size: 14px;
   color: #3e3e3e;

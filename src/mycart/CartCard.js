@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./styles/MyCart.css";
+import moment from "moment";
+
 export default function CartCard({ name, image, price, rating, desc }) {
   const [count, setCount] = useState(1);
   return (
@@ -86,7 +88,9 @@ export default function CartCard({ name, image, price, rating, desc }) {
             Remove
           </div>
         </div>
-        <div className="delivery_div">Delivery by Sat Aug 12 | Free</div>
+        <div className="delivery_div">
+          Delivery by <b> {moment().format("Do MMM YYYY")} </b>{" "}
+        </div>
       </div>
     </>
   );

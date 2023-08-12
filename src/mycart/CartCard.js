@@ -89,7 +89,7 @@ export default function CartCard({ name, image, price, rating, desc }) {
           </div>
         </div>
         <div className="delivery_div">
-          Delivery by <b> {moment().format("Do MMM YYYY")} </b>{" "}
+          Delivery by <b> {moment().add(4, "days").format("Do MMM YYYY")} </b>{" "}
         </div>
       </div>
     </>

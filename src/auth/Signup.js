@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Button, Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
-import { publicAxios } from "../commons/auth.js";
+import { publicAxios, registerAxios } from "../commons/auth.js";
+import axios from "axios";
 
 export default function Signup({ isopen = false, setIsOpen = () => {} }) {
   const navigate = useNavigate();
@@ -31,7 +32,7 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
     const username = eData[0];
     console.log(username);
     await publicAxios
-      .post("auth/local/register", {
+      .post("register/register", {
         ...data,
         username: username,
       })

@@ -3,8 +3,8 @@ import { Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import Signup from "./Signup";
+import { publicAxios, registerAxios } from "../commons/auth";
 import axios from "axios";
-import { publicAxios } from "../commons/auth";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -26,8 +26,8 @@ export default function Login() {
   };
 
   const onSignup = async () => {
-    await publicAxios
-      .post("auth/local", {
+    await axios
+      .post("auth/login", {
         ...data,
       })
       .then((response) => {

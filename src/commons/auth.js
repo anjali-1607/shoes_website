@@ -17,6 +17,35 @@ publicAxios.interceptors.response.use(
   }
 );
 
+export const registerAxios = axios.create({
+  baseURL: BASE_URL,
+});
+
+registerAxios.interceptors.response.use(
+  function (res) {
+    return res.data;
+  },
+  function (err) {
+    // return Promise.reject(err);
+    const originalRequest = err.config;
+    if (
+      (err?.response?.status === 403 || err?.response?.status === 401) &&
+      !originalRequest._retry
+    ) {
+      //console.log('401 0r 403')
+
+      //
+
+      registerAxios.defaults.headers.common["Authorization"] =
+        "Bearer " + "ZUw4c7Wy4h3feN4QE77yquBMiMeoreS8";
+
+      //return secureAxios(originalRequest)
+      return Promise.reject(err);
+    }
+    return Promise.reject(err);
+  }
+);
+
 export const secureAxios = axios.create({
   baseURL: BASE_URL,
 });

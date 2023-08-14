@@ -26,7 +26,7 @@ export default function Login() {
   };
 
   const onSignup = async () => {
-    await axios
+    await registerAxios
       .post("auth/login", {
         ...data,
       })

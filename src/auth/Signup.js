@@ -31,15 +31,15 @@ export default function Signup({ isopen = false, setIsOpen = () => {} }) {
 
     const username = eData[0];
     console.log(username);
-    await publicAxios
+    await registerAxios
       .post("register/register", {
         ...data,
         username: username,
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("access_token", response.jwt);
-        localStorage.setItem("user_id", response.user.id);
+        // localStorage.setItem("access_token", response.jwt);
+        // localStorage.setItem("user_id", response.user.id);
         setData({});
         navigate("/");
       })

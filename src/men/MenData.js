@@ -11,11 +11,11 @@ export default function MenData() {
   const getData = async () => {
     await publicAxios
       .get(
-        "products?populate=*&filters[category][Name][$eq]=Men&pagination[limit]=1000"
+        "items/products?fields=*,category.name&filter[category][name][_eq]=men"
       )
 
       .then((res) => {
-        // console.log(res.data);
+        console.log(res.data);
         setData(res.data);
       });
   };
@@ -36,10 +36,10 @@ export default function MenData() {
                   navigate(`/product-details/${e.id}`);
                 }}>
                 <MenCards
-                  image={e.attributes.image.data[0].attributes.url}
-                  name={e.attributes.name}
-                  price={e.attributes.price}
-                  rating={e.attributes.size}
+                  image={e.image}
+                  name={e.name}
+                  price={e.price}
+                  size={e.size}
                 />
               </div>
             </>

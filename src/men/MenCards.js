@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function MenCards({ name, image, price, rating }) {
+export default function MenCards({ name, image, price, size }) {
   return (
     <>
       <div>
@@ -8,7 +8,7 @@ export default function MenCards({ name, image, price, rating }) {
           <div className="img_div">
             <img
               className="product__image"
-              src={`http://localhost:1337${image}`}
+              src={`http://localhost:8055/assets/${image}`}
             />
           </div>
           <div className="pro_data">

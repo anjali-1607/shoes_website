@@ -11,7 +11,7 @@ export default function KidsData() {
   const getData = async () => {
     await publicAxios
       .get(
-        "products?populate=*&filters[category][Name][$eq]=Kids&pagination[limit]=1000"
+        "items/products?fields=*,category.name&filter[category][name][_eq]=kids"
       )
       .then((res) => {
         // console.log(res.data);
@@ -37,10 +37,10 @@ export default function KidsData() {
                 }}>
                 {" "}
                 <KidsCard
-                  image={e.attributes.image.data[0].attributes.url}
-                  name={e.attributes.name}
-                  price={e.attributes.price}
-                  rating={e.attributes.size}
+                  image={e.image}
+                  name={e.name}
+                  price={e.price}
+                  size={e.size}
                 />
               </div>
             </>

@@ -8,7 +8,7 @@ export default function WomenCard({ name, image, price, rating }) {
           <div className="img_div">
             <img
               className="product__image"
-              src={`http://localhost:1337${image}`}
+              src={`http://localhost:8055/assets/${image}`}
             />
           </div>
           <div className="pro_data">

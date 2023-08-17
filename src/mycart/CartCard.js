@@ -1,16 +1,39 @@
 import React, { useState } from "react";
 import "./styles/MyCart.css";
 import moment from "moment";
+import { secureAxios } from "../commons/auth";
+import { ToastContainer, toast } from "react-toastify";
 
-export default function CartCard({ name, image, price, rating, desc }) {
+export default function CartCard({
+  name,
+  image,
+  price,
+  rating,
+  desc,
+  product_cart_id,
+}) {
   const [count, setCount] = useState(1);
+  const showToastMessage = () => {
+    toast.error("Successfully Removed from Cart ", {
+      position: toast.POSITION.BOTTOM_RIGHT,
+    });
+  };
+  const onRemove = async (id) => {
+    await secureAxios
+      .delete(`/items/products_directus_users/${id}`)
+      .then((res) => {
+        console.log(res);
+        showToastMessage();
+      });
+  };
   return (
     <>
+      <ToastContainer />
       <div className="cart_product">
         <div>
           <img
             className="images_product"
-            src={`http://localhost:1337${image}`}></img>
+            src={`http://localhost:8055/assets/${image}`}></img>
           <div className="counter">
             {count >= 2 ? (
               <button
@@ -77,15 +100,15 @@ export default function CartCard({ name, image, price, rating, desc }) {
             }}>
             ₹{price}
           </div>
-          <div
-            style={{
-              fontFamily: "Gill Sans, sans-serif",
-              fontSize: "18px",
-              color: "black",
-              marginTop: "22px",
-              cursor: "pointer",
-            }}>
-            Remove
+          <div>
+            <button
+              className="btn_removed_cart"
+              onClick={() => {
+                onRemove(product_cart_id);
+              }}>
+              {" "}
+              Remove
+            </button>
           </div>
         </div>
         <div className="delivery_div">

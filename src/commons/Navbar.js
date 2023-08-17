@@ -16,7 +16,7 @@ export default function Navbar() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   const gotologin = () => {
     navigate("/login");
   };
@@ -26,7 +26,8 @@ export default function Navbar() {
       .get("users/me")
       .then((res) => {
         console.log(res);
-        setName(`${res.first_name} ${res.last_name}`);
+        setName(`${res.data.first_name} ${res.data.last_name}`);
+        localStorage.setItem("user_id", res.data.id);
       })
       .catch((err) => {
         console.log(err);

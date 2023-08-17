@@ -10,12 +10,13 @@ export default function MyCart({ name, image, price, rating, desc }) {
   const { id: productId } = useParams();
   console.log(productId);
   console.log(data);
+
   const getData = async () => {
     await secureAxios
-      .get("users/me?populate[mycarts][populate][0]=image")
+      .get("users/me?fields=products.id,products.products_id.*")
       .then((res) => {
-        console.log(res.mycarts);
-        setData(res.mycarts);
+        console.log(res.data);
+        setData(res.data.products);
       });
   };
   useEffect(() => {
@@ -36,16 +37,17 @@ export default function MyCart({ name, image, price, rating, desc }) {
           </div>
 
           <div>
-            {data.map((data) => {
+            {data?.map((data) => {
               console.log(data);
               return (
                 <>
                   <CartCard
-                    image={data.image[0].url}
-                    name={data.name}
-                    price={data.price}
+                    image={data?.products_id?.image}
+                    name={data?.products_id?.name}
+                    price={data?.products_id?.price}
                     // rating={data?.attributes?.size}
-                    desc={data.description}
+                    desc={data?.products_id?.description}
+                    product_cart_id={data?.id}
                   />
                 </>
               );

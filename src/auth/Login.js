@@ -26,14 +26,14 @@ export default function Login() {
   };
 
   const onSignup = async () => {
-    await registerAxios
+    await publicAxios
       .post("auth/login", {
         ...data,
       })
       .then((response) => {
         console.log(response);
-        localStorage.setItem("access_token", response.jwt);
-        localStorage.setItem("user_id", response.user.id);
+        localStorage.setItem("access_token", response.data.access_token);
+        // localStorage.setItem("user_id", response.user.id);
         setData({});
         navigate("/");
       })
@@ -61,8 +61,8 @@ export default function Login() {
                 type="email"
                 required={true}
                 placeholder="abc@gmail.com"
-                name="identifier"
-                value={data.identifier || ""}
+                name="email"
+                value={data.email || ""}
                 onChange={getSignupVal}
               />
             </Form.Field>

@@ -11,12 +11,10 @@ export default function DescriptionData() {
   console.log(productId);
   console.log(data);
   const getData = async () => {
-    await publicAxios
-      .get(`products/${productId}?populate=category.,image.`)
-      .then((res) => {
-        console.log(res.data);
-        setData(res.data);
-      });
+    await publicAxios.get(`items/products/${productId}`).then((res) => {
+      console.log(res.data);
+      setData(res.data);
+    });
     // try {
     //   const response = await publicAxios.get(
     //     `products?populate=category.,image.${productId}`
@@ -35,11 +33,11 @@ export default function DescriptionData() {
       <Navbar />
       <div>
         <Description
-          image={data?.attributes?.image?.data[0]?.attributes.url}
-          name={data?.attributes?.name}
-          price={data?.attributes?.price}
-          size={data?.attributes?.size}
-          desc={data?.attributes?.description}
+          image={data.image}
+          name={data.name}
+          price={data.price}
+          size={data.size}
+          desc={data.description}
           id={productId}
         />
       </div>

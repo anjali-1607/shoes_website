@@ -3,10 +3,11 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/Description.css";
 import { Button, Icon } from "semantic-ui-react";
-import { publicAxios } from "../commons/auth";
+import { publicAxios, secureAxios } from "../commons/auth";
+import { useParams } from "react-router-dom";
 
 export default function Description({ name, image, price, id, desc }) {
-  // const { id } = useParams();
+  const { id: productId } = useParams();
   const showToastMessage = () => {
     toast.success("Successfully Added to Cart ", {
       position: toast.POSITION.BOTTOM_RIGHT,
@@ -14,13 +15,12 @@ export default function Description({ name, image, price, id, desc }) {
   };
 
   const postValue = async () => {
-    console.log("anjali");
+    // console.log("anjali");
     const userId = localStorage.getItem("user_id");
-    await publicAxios
-      .put(`products/${id}`, {
-        data: {
-          users: [userId],
-        },
+    await secureAxios
+      .post(`/items/products_directus_users`, {
+        directus_users_id: userId,
+        products_id: productId,
       })
       .then((res) => {
         console.log(res.data);
@@ -37,7 +37,7 @@ export default function Description({ name, image, price, id, desc }) {
             {" "}
             <img
               className="image_product"
-              src={`http://localhost:1337${image}`}
+              src={`http://localhost:8055/assets/${image}`}
             />{" "}
           </div>
           <div className="bottom_img_div">

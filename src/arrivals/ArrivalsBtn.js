@@ -1,8 +1,10 @@
 import React from "react";
-import { publicAxios } from "../commons/auth";
+import { publicAxios, secureAxios } from "../commons/auth";
 import { ToastContainer, toast } from "react-toastify";
+import { useParams } from "react-router-dom";
 
 export default function ArrivalsBtn({ id }) {
+  const { id: productId } = useParams();
   const showToastMessage = () => {
     toast.success("Successfully Added to Cart ", {
       position: toast.POSITION.BOTTOM_RIGHT,
@@ -10,17 +12,15 @@ export default function ArrivalsBtn({ id }) {
   };
 
   const postValue = async () => {
-    console.log("anjali");
+    // console.log("anjali");
     const userId = localStorage.getItem("user_id");
-    await publicAxios
-      .put(`products/${id}`, {
-        data: {
-          users: [userId],
-        },
+    await secureAxios
+      .post(`/items/products_directus_users`, {
+        directus_users_id: userId,
+        products_id: productId,
       })
       .then((res) => {
         console.log(res.data);
-
         showToastMessage();
       });
   };

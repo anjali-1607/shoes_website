@@ -9,7 +9,6 @@ export default function MyCart({ name, image, price, rating, desc }) {
   const [data, setData] = useState([]);
   const { id: productId } = useParams();
   console.log(productId);
-  console.log(data);
 
   const getData = async () => {
     await secureAxios
@@ -19,9 +18,27 @@ export default function MyCart({ name, image, price, rating, desc }) {
         setData(res.data.products);
       });
   };
+
   useEffect(() => {
     getData();
   }, []);
+
+  console.log(data);
+  console.log(data[0].products_id.price);
+  const prices = data?.map((productData) => productData?.products_id?.price);
+  console.log(prices);
+
+  const totalPrices = prices?.reduce((acc, ele) => acc + ele);
+  console.log(totalPrices);
+
+  const salePrices = data?.map(
+    (productData) => productData?.products_id?.sale_price
+  );
+  console.log(salePrices);
+
+  const totalsalePrices = salePrices?.reduce((acc, ele) => acc + ele);
+  console.log(totalsalePrices);
+
   return (
     <>
       <Navbar />
@@ -54,27 +71,33 @@ export default function MyCart({ name, image, price, rating, desc }) {
             })}
           </div>
         </div>
+
         <div className="price_div">
           <div className="price_details">PRICE DETAILS</div>
           <div className="details_right_div">
             <div className="price">
               Price
-              <div style={{ marginLeft: "18em" }}>₹600</div>
+              <div style={{ marginLeft: "auto" }}>₹{totalPrices}</div>
             </div>
             <div className="price">
-              Discount <div style={{ marginLeft: "16.5em" }}>₹600</div>
+              Discount{" "}
+              <div style={{ marginLeft: "auto" }}>
+                ₹{totalPrices - totalsalePrices}{" "}
+              </div>
             </div>
             <div className="price">
-              Sale Free <div style={{ marginLeft: "16em" }}>₹600</div>
+              Sale Price{" "}
+              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices}</div>
             </div>
             <div className="price">
-              Delivery Charges <div style={{ marginLeft: "13em" }}>Free</div>
+              Delivery Charges <div style={{ marginLeft: "auto" }}>Free</div>
             </div>
             <div className="total_amount">
-              Total Amount <div style={{ marginLeft: "11em" }}>₹1200</div>{" "}
+              Total Amount{" "}
+              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices}</div>{" "}
             </div>
             <div className="save_rupees">
-              You will save ₹1,990 on this order
+              You will save {totalPrices - totalsalePrices} on this order
             </div>
           </div>
         </div>

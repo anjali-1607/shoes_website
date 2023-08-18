@@ -3,7 +3,7 @@ import { Form } from "semantic-ui-react";
 import "./styles/Login.css";
 import { useNavigate } from "react-router-dom";
 import Signup from "./Signup";
-import { publicAxios, registerAxios } from "../commons/auth";
+import { publicAxios, registerAxios, setAuthToken } from "../commons/auth";
 import axios from "axios";
 
 export default function Login() {
@@ -32,6 +32,7 @@ export default function Login() {
       })
       .then((response) => {
         console.log(response);
+        setAuthToken(response.data.access_token);
         localStorage.setItem("access_token", response.data.access_token);
         // localStorage.setItem("user_id", response.user.id);
         setData({});

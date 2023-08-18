@@ -8,12 +8,14 @@ export default function CartCard({
   name,
   image,
   price,
-  rating,
   desc,
   product_cart_id,
+  counter,
 }) {
   const [count, setCount] = useState(1);
   console.log(count);
+  counter(count);
+
   const showToastMessage = () => {
     toast.error("Successfully Removed from Cart ", {
       position: toast.POSITION.BOTTOM_RIGHT,

@@ -7,8 +7,15 @@ import { secureAxios } from "../commons/auth";
 
 export default function MyCart() {
   const [data, setData] = useState([]);
+  const [count, setCount] = useState(1);
   const { id: productId } = useParams();
   console.log(productId);
+
+  const counting = (e) => {
+    console.log(e);
+    setCount(e);
+  };
+  console.log(count);
 
   const getData = async () => {
     await secureAxios
@@ -72,6 +79,7 @@ export default function MyCart() {
                     // rating={data?.attributes?.size}
                     desc={data?.products_id?.description}
                     product_cart_id={data?.id}
+                    counter={counting}
                   />
                 </>
               );

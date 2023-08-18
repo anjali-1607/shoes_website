@@ -5,7 +5,7 @@ import CartCard from "./CartCard";
 import { useParams } from "react-router-dom";
 import { secureAxios } from "../commons/auth";
 
-export default function MyCart({ name, image, price, rating, desc }) {
+export default function MyCart() {
   const [data, setData] = useState([]);
   const { id: productId } = useParams();
   console.log(productId);
@@ -24,20 +24,27 @@ export default function MyCart({ name, image, price, rating, desc }) {
   }, []);
 
   console.log(data);
-  console.log(data[0].products_id.price);
-  const prices = data?.map((productData) => productData?.products_id?.price);
-  console.log(prices);
+  // console.log(data[0].products_id.price);
 
-  const totalPrices = prices?.reduce((acc, ele) => acc + ele);
-  console.log(totalPrices);
+  const totalPrices = () => {
+    const prices = data?.map((productData) => productData?.products_id?.price);
+    console.log(prices);
 
-  const salePrices = data?.map(
-    (productData) => productData?.products_id?.sale_price
-  );
-  console.log(salePrices);
+    const totalPricess = prices?.reduce((acc, ele) => acc + ele, 0);
+    console.log(totalPricess);
+    return totalPricess;
+  };
 
-  const totalsalePrices = salePrices?.reduce((acc, ele) => acc + ele);
-  console.log(totalsalePrices);
+  const totalsalePrices = () => {
+    const salePrices = data?.map(
+      (productData) => productData?.products_id?.sale_price
+    );
+    console.log(salePrices);
+
+    const totalsalePricess = salePrices?.reduce((acc, ele) => acc + ele, 0);
+    console.log(totalsalePricess);
+    return totalsalePricess;
+  };
 
   return (
     <>
@@ -77,27 +84,27 @@ export default function MyCart({ name, image, price, rating, desc }) {
           <div className="details_right_div">
             <div className="price">
               Price
-              <div style={{ marginLeft: "auto" }}>₹{totalPrices}</div>
+              <div style={{ marginLeft: "auto" }}>₹{totalPrices()}</div>
             </div>
             <div className="price">
               Discount{" "}
               <div style={{ marginLeft: "auto" }}>
-                ₹{totalPrices - totalsalePrices}{" "}
+                ₹{totalPrices() - totalsalePrices()}{" "}
               </div>
             </div>
             <div className="price">
               Sale Price{" "}
-              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices}</div>
+              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices()}</div>
             </div>
             <div className="price">
               Delivery Charges <div style={{ marginLeft: "auto" }}>Free</div>
             </div>
             <div className="total_amount">
               Total Amount{" "}
-              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices}</div>{" "}
+              <div style={{ marginLeft: "auto" }}>₹{totalsalePrices()}</div>{" "}
             </div>
             <div className="save_rupees">
-              You will save {totalPrices - totalsalePrices} on this order
+              You will save {totalPrices() - totalsalePrices()} on this order
             </div>
           </div>
         </div>

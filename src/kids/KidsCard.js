@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function KidsCard({ name, image, price, rating }) {
+export default function KidsCard({ name, image, price, rating, salePrice }) {
   return (
     <>
       <div>
@@ -13,7 +13,11 @@ export default function KidsCard({ name, image, price, rating }) {
           </div>
           <div className="pro_data">
             <div className="name_arr_div">{name} </div>
-            <div className="price_arr_div">₹{price} </div>
+            <div style={{ display: "flex" }}>
+              {" "}
+              <div className="price_arr_div"> ₹{salePrice}</div>
+              <div className="saleprice_arr_div"> ₹{price} </div>
+            </div>
             <div className="button_arr">
               <button className="cart_arr_btn">Add to Cart</button>
               <button className="buy_arr_btn">Buy Now</button>

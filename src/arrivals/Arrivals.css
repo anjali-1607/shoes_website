@@ -45,6 +45,14 @@
   font-size: 17px;
   font-weight: bold;
 }
+.saleprice_arr_div {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-size: 17px;
+  margin-left: 15px;
+  text-decoration: line-through;
+  /* font-size: 14px; */
+  color: #797979;
+}
 .cart_arr_btn {
   padding: 6px 10px;
   background-color: #49769c;

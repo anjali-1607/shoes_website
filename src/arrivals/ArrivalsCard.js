@@ -5,7 +5,7 @@ import { ToastContainer } from "react-toastify";
 import ArrivalsBtn from "./ArrivalsBtn";
 import { useNavigate } from "react-router-dom";
 
-export default function ArrivalsCard({ name, image, price, id }) {
+export default function ArrivalsCard({ name, image, price, id, salePrice }) {
   const navigate = useNavigate();
   return (
     <>
@@ -24,7 +24,11 @@ export default function ArrivalsCard({ name, image, price, id }) {
             </div>
             <div className="pro_data">
               <div className="name_arr_div">{name} </div>
-              <div className="price_arr_div">₹{price} </div>
+              <div style={{ display: "flex" }}>
+                {" "}
+                <div className="price_arr_div"> ₹{salePrice}</div>
+                <div className="saleprice_arr_div"> ₹{price} </div>
+              </div>
             </div>
           </div>
           <ArrivalsBtn id={id} />

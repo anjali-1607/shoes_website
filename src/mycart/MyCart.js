@@ -31,14 +31,16 @@ export default function MyCart() {
   }, []);
 
   console.log(data);
-  // console.log(data[0].products_id.price);
+  console.log(data[0].products_id.id);
 
   const totalPrices = () => {
     const prices = data?.map((productData) => productData?.products_id?.price);
+    const proId = data?.map((proid) => proid?.products_id?.id);
+    console.log(proId);
     console.log(prices);
 
     const totalPricess = prices?.reduce((acc, ele) => acc + ele, 0);
-    console.log(totalPricess);
+    // console.log(totalPricess);
     return totalPricess;
   };
 
@@ -46,10 +48,10 @@ export default function MyCart() {
     const salePrices = data?.map(
       (productData) => productData?.products_id?.sale_price
     );
-    console.log(salePrices);
+    // console.log(salePrices);
 
     const totalsalePricess = salePrices?.reduce((acc, ele) => acc + ele, 0);
-    console.log(totalsalePricess);
+    // console.log(totalsalePricess);
     return totalsalePricess;
   };
 
@@ -69,7 +71,7 @@ export default function MyCart() {
 
           <div>
             {data?.map((data) => {
-              console.log(data);
+              // console.log(data);
               return (
                 <>
                   <CartCard
@@ -112,7 +114,7 @@ export default function MyCart() {
               <div style={{ marginLeft: "auto" }}>₹{totalsalePrices()}</div>{" "}
             </div>
             <div className="save_rupees">
-              You will save {totalPrices() - totalsalePrices()} on this order
+              You will save ₹{totalPrices() - totalsalePrices()} on this order
             </div>
           </div>
         </div>

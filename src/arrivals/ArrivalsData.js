@@ -32,6 +32,7 @@ export default function ArrivalsData() {
                   image={e.image}
                   name={e.name}
                   price={e.price}
+                  salePrice={e.sale_price}
                   size={e.size}
                   id={e.id}
                 />

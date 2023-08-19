@@ -8,6 +8,7 @@ import { secureAxios } from "../commons/auth";
 export default function MyCart() {
   const [data, setData] = useState([]);
   const [count, setCount] = useState(1);
+  const [sale, setSale] = useState();
   const { id: productId } = useParams();
   console.log(productId);
 
@@ -17,9 +18,17 @@ export default function MyCart() {
   };
   console.log(count);
 
+  // const counterPrice = (e) => {
+  //   console.log(e);
+  //   setSale(e);
+  // };
+  console.log(sale);
+
   const getData = async () => {
     await secureAxios
-      .get("users/me?fields=products.id,products.products_id.*")
+      .get(
+        "users/me?fields=products.id,products.products_id.*,products.quantity"
+      )
       .then((res) => {
         console.log(res.data);
         setData(res.data.products);
@@ -28,13 +37,15 @@ export default function MyCart() {
 
   useEffect(() => {
     getData();
-  }, []);
+  }, [count]);
 
   console.log(data);
   // console.log(data[0].products_id.id);
 
   const totalPrices = () => {
-    const prices = data?.map((productData) => productData?.products_id?.price);
+    const prices = data?.map(
+      (productData) => productData?.products_id?.price * productData.quantity
+    );
     const proId = data?.map((proid) => proid?.products_id?.id);
     console.log(proId);
     console.log(prices);
@@ -46,11 +57,12 @@ export default function MyCart() {
 
   const totalsalePrices = () => {
     const salePrices = data?.map(
-      (productData) => productData?.products_id?.sale_price
+      (productData) =>
+        productData?.products_id?.sale_price * productData.quantity
     );
     // console.log(salePrices);
 
-    const totalsalePricess = salePrices?.reduce((acc, ele) => acc + ele, 0);
+    const totalsalePricess = salePrices.reduce((acc, ele) => acc + ele, 0);
     // console.log(totalsalePricess);
     return totalsalePricess;
   };
@@ -83,6 +95,8 @@ export default function MyCart() {
                     desc={data?.products_id?.description}
                     product_cart_id={data?.id}
                     counter={counting}
+                    // countsalePrice={counterPrice}
+                    quantity={data.quantity}
                   />
                 </>
               );

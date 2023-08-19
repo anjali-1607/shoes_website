@@ -12,10 +12,15 @@ export default function CartCard({
   product_cart_id,
   counter,
   salePrice,
+  countsalePrice,
+  quantity,
 }) {
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(quantity);
+
   console.log(count);
   counter(count);
+  console.log(salePrice * count);
+  // countsalePrice(salePrice * count);
 
   const showToastMessage = () => {
     toast.error("Successfully Removed from Cart ", {
@@ -30,6 +35,17 @@ export default function CartCard({
         showToastMessage();
       });
   };
+
+  const onCount = async (id, count) => {
+    await secureAxios
+      .patch(`/items/products_directus_users/${id}`, {
+        quantity: count,
+      })
+      .then((res) => {
+        console.log(res);
+      });
+  };
+
   return (
     <>
       <ToastContainer />
@@ -43,6 +59,7 @@ export default function CartCard({
               <button
                 className="btn_minus"
                 onClick={() => {
+                  onCount(product_cart_id, count - 1);
                   setCount(count - 1);
                 }}>
                 -
@@ -52,6 +69,7 @@ export default function CartCard({
                 disabled
                 className="btn_minus"
                 onClick={() => {
+                  onCount(product_cart_id, count - 1);
                   setCount(count - 1);
                 }}>
                 -
@@ -63,6 +81,7 @@ export default function CartCard({
             <button
               className="btn_plus"
               onClick={() => {
+                onCount(product_cart_id, count + 1);
                 setCount(count + 1);
               }}>
               +
@@ -105,7 +124,7 @@ export default function CartCard({
                 color: "#797979",
                 textDecoration: "line-through",
               }}>
-              ₹{price}
+              ₹{price * count}
             </div>
             <div
               style={{
@@ -115,7 +134,7 @@ export default function CartCard({
                 marginTop: "8px",
                 marginLeft: "10px",
               }}>
-              ₹{salePrice}
+              ₹{salePrice * count}
             </div>
           </div>
           <div>

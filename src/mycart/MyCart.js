@@ -31,7 +31,7 @@ export default function MyCart() {
   }, []);
 
   console.log(data);
-  console.log(data[0].products_id.id);
+  // console.log(data[0].products_id.id);
 
   const totalPrices = () => {
     const prices = data?.map((productData) => productData?.products_id?.price);
@@ -78,6 +78,7 @@ export default function MyCart() {
                     image={data?.products_id?.image}
                     name={data?.products_id?.name}
                     price={data?.products_id?.price}
+                    salePrice={data?.products_id?.sale_price}
                     // rating={data?.attributes?.size}
                     desc={data?.products_id?.description}
                     product_cart_id={data?.id}

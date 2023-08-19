@@ -11,6 +11,7 @@ export default function CartCard({
   desc,
   product_cart_id,
   counter,
+  salePrice,
 }) {
   const [count, setCount] = useState(1);
   console.log(count);
@@ -94,14 +95,28 @@ export default function CartCard({
             }}>
             Seller
           </div>
-          <div
-            style={{
-              fontFamily: "Gill Sans, sans-serif",
-              fontSize: "18px",
-              color: "black",
-              marginTop: "8px",
-            }}>
-            ₹{price}
+          <div style={{ display: "flex" }}>
+            <div
+              style={{
+                fontFamily: "Gill Sans, sans-serif",
+                fontSize: "15px",
+                color: "black",
+                marginTop: "8px",
+                color: "#797979",
+                textDecoration: "line-through",
+              }}>
+              ₹{price}
+            </div>
+            <div
+              style={{
+                fontFamily: "Gill Sans, sans-serif",
+                fontSize: "18px",
+                color: "black",
+                marginTop: "8px",
+                marginLeft: "10px",
+              }}>
+              ₹{salePrice}
+            </div>
           </div>
           <div>
             <button

@@ -17,9 +17,32 @@
 }
 .grand_carousel {
   /* width: 100em; */
-  height: 30em;
+  height: 40em;
+  background-color: #ffffff;
+  display: flex;
   /* margin: 1em 0; */
 }
+
+.small_rect {
+  height: auto;
+  width: 30em;
+  margin-left: auto;
+  background-color: rgb(186, 223, 255);
+}
+.big_rect {
+  height: auto;
+  width: 60em;
+  margin-left: auto;
+  background-color: rgb(88, 88, 88);
+}
+/* .circle_home {
+  width: 40em;
+  height: 40em;
+  background-color: aquamarine;
+  float: right;
+  border-radius: 40% 0 30% 40%;
+  transform: rotate(-30deg);
+} */
 
 .carousel_img {
   width: 100%;

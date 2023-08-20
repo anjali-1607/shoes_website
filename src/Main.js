@@ -15,16 +15,15 @@ export default function Main() {
       <div className="main_div">
         <Navbar />
         <div className="grand_carousel">
-          <img
+          <div className="big_rect"></div>
+          <div className="small_rect"></div>
+          {/* <img
             className="carousel_img"
             src={require("./images/carousel_2.png")}
             alt=""
-          />
-          {/* <Slider /> */}
+          /> */}
         </div>
-        {/* <div className="login_div">
-            <Login />
-          </div> */}
+
         <div className="brand">
           <div className="brand_div">
             {" "}

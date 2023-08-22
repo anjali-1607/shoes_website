@@ -3,4 +3,5 @@
   padding: 2em;
   display: flex;
   justify-content: space-evenly;
+  border-top: 1px solid rgb(206, 206, 206);
 }

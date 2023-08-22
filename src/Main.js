@@ -8,21 +8,14 @@ import Slider from "./sliders/Slider";
 import SliderCards from "./sliders/SliderCards";
 
 import Footers from "./footer/Footers";
+import ImageCard from "./ImageCard";
 
 export default function Main() {
   return (
     <>
       <div className="main_div">
         <Navbar />
-        <div className="grand_carousel">
-          <div className="big_rect"></div>
-          <div className="small_rect"></div>
-          {/* <img
-            className="carousel_img"
-            src={require("./images/carousel_2.png")}
-            alt=""
-          /> */}
-        </div>
+        <ImageCard />
 
         <div className="brand">
           <div className="brand_div">

@@ -4,7 +4,7 @@ export default function ImageCard() {
   return (
     <>
       <div className="grand_carousel">
-        <div className="square_div"></div>
+        {/* <div className="square_div"></div> */}
         <div className="text_divv">
           <h1
             className="shoes_text"

@@ -12,7 +12,7 @@
 .grand_product_div {
   width: 20em;
   height: auto;
-  background-color: #ececec;
+  background-color: #ffffff;
   margin: 5px;
   border: 1px solid rgb(218, 218, 218);
 }
@@ -24,13 +24,13 @@
 .img_div {
   width: 20em;
   height: 20em;
-  background-color: #6e6e6e;
+  background-color: #ffffff;
 }
 .pro_data {
   width: 20em;
   height: auto;
-  background-color: #ececec;
-  padding: 2px;
+  background-color: #ffffff;
+  padding: 2px 4px;
 }
 .button_arr {
   display: flex;
@@ -48,19 +48,71 @@
 .saleprice_arr_div {
   font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 17px;
-  margin-left: 15px;
+  margin-left: 7px;
   text-decoration: line-through;
   /* font-size: 14px; */
   color: #797979;
 }
 .cart_arr_btn {
-  padding: 6px 10px;
-  background-color: #49769c;
-  color: #fff;
-  border: 1px solid rgb(171, 171, 171);
-  border-radius: 4px;
+  /* margin-top: 14px; */
+  appearance: none;
+  background-color: #fafbfc;
+  border: 1px solid rgba(31, 31, 31, 0.15);
+  border-radius: 6px 6px 6px 0;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292e;
   cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
 }
+
+.cart_arr_btn:hover {
+  background-color: #ececec;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.cart_arr_btn:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.cart_arr_btn:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.cart_arr_btn:focus {
+  outline: 1px transparent;
+}
+
+.cart_arr_btn:before {
+  display: none;
+}
+
+.cart_arr_btn-:-webkit-details-marker {
+  display: none;
+}
+
 .buy_arr_btn {
   padding: 6px 10px;
   background-color: #49769c;

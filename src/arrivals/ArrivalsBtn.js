@@ -35,7 +35,7 @@ export default function ArrivalsBtn({ id }) {
           }}>
           Add to Cart
         </button>
-        <button className="buy_arr_btn">Buy Now</button>
+        {/* <button className="buy_arr_btn">Buy Now</button> */}
       </div>
     </>
   );

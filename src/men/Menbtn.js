@@ -2,7 +2,7 @@ import React from "react";
 import { publicAxios, secureAxios } from "../commons/auth";
 import { ToastContainer, toast } from "react-toastify";
 
-export default function ArrivalsBtn({ id }) {
+export default function Menbtn({ id }) {
   // const { id: productId } = useParams();
   const showToastMessage = () => {
     toast.success("Successfully Added to Cart ", {
@@ -34,7 +34,6 @@ export default function ArrivalsBtn({ id }) {
           }}>
           Add to Cart
         </button>
-        {/* <button className="buy_arr_btn">Buy Now</button> */}
       </div>
     </>
   );

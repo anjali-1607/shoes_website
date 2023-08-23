@@ -38,6 +38,7 @@ export default function WomenData() {
                   price={e.price}
                   size={e.size}
                   salePrice={e.sale_price}
+                  id={e.id}
                 />
               </div>
             </>

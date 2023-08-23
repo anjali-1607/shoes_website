@@ -37,6 +37,7 @@ export default function MenData() {
                   price={e.price}
                   size={e.size}
                   salePrice={e.sale_price}
+                  id={e.id}
                 />
               </div>
             </>

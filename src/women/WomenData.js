@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 
 export default function WomenData() {
   const [data, setData] = useState([]);
-  const navigate = useNavigate();
 
   const getData = async () => {
     await publicAxios
@@ -31,10 +30,7 @@ export default function WomenData() {
           console.log(e);
           return (
             <>
-              <div
-                onClick={() => {
-                  navigate(`/product-details/${e.id}`);
-                }}>
+              <div>
                 {" "}
                 <WomenCard
                   image={e.image}

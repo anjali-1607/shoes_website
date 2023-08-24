@@ -35,11 +35,11 @@ export default function Card_data() {
         "https://i0.wp.com/1ststepin.com/wp-content/uploads/2021/04/woodland-shoe-g-40777cma-7.jpg?fit=1043%2C786&ssl=1",
     },
     {
-      name: "WOODLAND",
+      name: "REEBOK",
       image: "https://img.freepik.com/free-photo/pair-trainers_144627-3800.jpg",
     },
     {
-      name: "WOODLAND",
+      name: "LIBERTY",
       image:
         "https://images.pexels.com/photos/19090/pexels-photo.jpg?cs=srgb&dl=pexels-web-donut-19090.jpg&fm=jpg",
     },

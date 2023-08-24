@@ -14,7 +14,7 @@
 }
 .grand_carousel {
   height: 40em;
-  background-image: linear-gradient(#f0eced, #fff);
+  background-image: linear-gradient(#f0eced, #fff, #fafafa);
   display: flex;
 }
 .square_div {
@@ -34,22 +34,6 @@
   height: 100%; */
   z-index: 1;
 }
-/* .text_divv:hover {
-  -webkit-clip-path: none;
-  clip-path: none;
-  z-index: 2;
-}
-
-@keyframes fill-text {
-  0% {
-    clip-path: var(--fill-from);
-  }
-
-  100% {
-    clip-path: var(--fill-to);
-    color: var(--text-color);
-  }
-} */
 
 .shoes_text {
   color: #91b1ca;
@@ -78,30 +62,6 @@
       3px 4px 0px blue, 5px 4px 0px blue, 4px 5px 0px blue, 6px 5px 0px blue,
       5px 6px 0px blue, 7px 6px 0px blue;
   }
-
-  /* color: transparent;
-  -webkit-text-stroke: 1px var(--text-color);
-  text-stroke: 1px var(--text-color);
-  font-size: 20vw;
-  font-family: "cardo", serif;
-
-  &:before {
-    content: attr(data-text);
-    position: absolute;
-  }
-
-  &:after {
-    content: var(--hover-text);
-    -webkit-text-stroke: initial;
-    text-stroke: initial;
-    font: 2vw/1.5 verdana;
-    color: #999;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translatex(-50%);
-    white-space: nowrap;
-  } */
 }
 .text_divv2 {
   margin: 15em 0 0 2em;

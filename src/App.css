@@ -14,7 +14,7 @@
 }
 .grand_carousel {
   height: 40em;
-  background-image: linear-gradient(#f0eced, #fff, #fafafa);
+  background-image: white;
   display: flex;
 }
 .square_div {
@@ -80,13 +80,13 @@
   background-color: rgb(186, 223, 255);
 }
 .overlay_div {
-  width: 25em;
+  width: 100%;
   /* height: auto; */
   background-color: rgb(186, 223, 255);
 }
 
 .carousel_img {
-  width: 35em;
+  /* width: 35em; */
   height: 40em;
 }
 
@@ -163,4 +163,8 @@
   width: 30em;
   height: 30em;
   border: 1px solid rgb(206, 206, 206);
+}
+.side_img_div {
+  width: 100%;
+  display: flex;
 }

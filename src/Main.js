@@ -6,6 +6,8 @@ import Footers from "./footer/Footers";
 import ImageCard from "./home/ImageCard";
 import Brands from "./home/Brands";
 import About from "./home/About";
+import Categories from "./home/category/Categories";
+import CategoriesCards from "./home/category/CategoriesCards";
 
 export default function Main() {
   return (
@@ -13,6 +15,8 @@ export default function Main() {
       <div className="main_div">
         <Navbar />
         <ImageCard />
+        <Categories />
+        <CategoriesCards />
         <Brands />
         <Card_data />
         <About />

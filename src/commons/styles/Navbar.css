@@ -18,11 +18,12 @@
   position: sticky;
   top: 0px;
   background-color: rgb(255, 255, 255);
-  /* padding: 4px; */
+  padding: 4px;
 }
 
 .nav123 {
   width: auto;
+  display: flex;
   height: auto;
   padding: 16px;
   margin: 0 3px;
@@ -36,6 +37,13 @@
 .nav123:hover {
   color: rgb(0, 122, 122);
 }
+@media screen and (max-width: 928px) {
+  .nav123 {
+    /* font-size: 12px; */
+    padding: 10px;
+  }
+}
+
 .nav11 {
   display: flex;
   justify-content: center;

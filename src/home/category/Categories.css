@@ -1,0 +1,13 @@
+.categories1 {
+  display: flex;
+  justify-content: space-around;
+}
+.categories2 {
+  width: 25em;
+  height: 15em;
+  border: 1px solid rgb(210, 210, 210);
+}
+.cat-img1 {
+  width: 25em;
+  height: 15em;
+}

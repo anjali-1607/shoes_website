@@ -7,7 +7,12 @@ export default function Card({ apple, mango }) {
   // console.log(mango);
   return (
     <>
-      <div className="card_div">
+      <div className="card11">
+        <img className="images" src={mango} />
+        {/* <h1 style={{ fontFamily: "Cinzel,sans-serif" }}>{apple}</h1> */}
+        <div>{apple}</div>
+      </div>
+      {/* <div className="card_div">
         <div className="image_div">
           <img className="images" src={mango} />
         </div>
@@ -15,7 +20,7 @@ export default function Card({ apple, mango }) {
           {" "}
           <h1 style={{ fontFamily: "Cinzel,sans-serif" }}>{apple}</h1>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

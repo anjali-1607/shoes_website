@@ -16,16 +16,29 @@ export default function CategoriesCards() {
         </div>
         <div>
           <div className="categories2">
-            {/* <img src={require("../images/Desktop - 2.png")} /> */}
+            <img
+              className="cat-img1"
+              src={require("../../images/menshoe.png")}
+            />
           </div>
           Men
         </div>
         <div>
-          <div className="categories2"></div>
+          <div className="categories2">
+            <img
+              className="cat-img1"
+              src={require("../../images/womenshoe.jpg")}
+            />
+          </div>
           Women
         </div>
         <div>
-          <div className="categories2"></div>
+          <div className="categories2">
+            <img
+              className="cat-img1"
+              src={require("../../images/kidshoe.jpg")}
+            />
+          </div>
           Kids
         </div>
       </div>

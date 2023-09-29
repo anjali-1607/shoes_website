@@ -11,3 +11,21 @@
   width: 25em;
   height: 15em;
 }
+
+.categories_text {
+  color: #000;
+  font-family: "Mulish", sans-serif;
+  font-size: 36px !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.new_arr_textt {
+  color: #000;
+  font-size: 16px !important;
+  font-weight: 500;
+  padding-top: 7px;
+  text-transform: capitalize;
+  font-family: "Mulish", sans-serif;
+}

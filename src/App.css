@@ -122,7 +122,7 @@
   height: auto;
   background-color: white;
   margin-top: 3em;
-  padding: 2em 10em;
+  padding: 0 2em;
   /* text-align: center; */
   /* display: flex; */
   /* justify-content: center; */
@@ -139,15 +139,16 @@
   /* margin-left: 2.3em; */
   text-align: center;
 }
-.about_text_div {
-  /* background-color: gray; */
-  width: 50em;
-  height: 30em;
-  padding: 4em;
-  font-size: 14px;
-  word-spacing: 10px;
-  border: 1px solid rgb(206, 206, 206);
-  overflow: scroll;
+
+.div_border {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(211, 211, 211);
+  display: flex;
+  padding: 5px;
+}
+.text_design {
+  padding: 2em;
 }
 .pink_shoe_div {
   background-color: rgb(191, 191, 191);
@@ -160,8 +161,8 @@
   height: 18em;
 }
 .pinkshoe_img {
-  width: 30em;
-  height: 30em;
+  width: 25em;
+  height: 20em;
   border: 1px solid rgb(206, 206, 206);
 }
 .side_img_div {

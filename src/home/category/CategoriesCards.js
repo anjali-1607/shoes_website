@@ -12,7 +12,7 @@ export default function CategoriesCards() {
               src={require("../../images/cat_shoe.jpg")}
             />
           </div>
-          New Arrivals
+          <div className="new_arr_textt"> New Arrivals</div>
         </div>
         <div>
           <div className="categories2">
@@ -21,7 +21,7 @@ export default function CategoriesCards() {
               src={require("../../images/menshoe.png")}
             />
           </div>
-          Men
+          <div className="new_arr_textt"> Men</div>
         </div>
         <div>
           <div className="categories2">
@@ -30,7 +30,7 @@ export default function CategoriesCards() {
               src={require("../../images/womenshoe.jpg")}
             />
           </div>
-          Women
+          <div className="new_arr_textt"> Women</div>
         </div>
         <div>
           <div className="categories2">
@@ -39,7 +39,7 @@ export default function CategoriesCards() {
               src={require("../../images/kidshoe.jpg")}
             />
           </div>
-          Kids
+          <div className="new_arr_textt"> Kids</div>
         </div>
       </div>
     </>

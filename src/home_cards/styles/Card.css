@@ -55,3 +55,11 @@
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.texttt {
+  color: #000;
+  font-size: 16px !important;
+  font-weight: 500;
+  padding-top: 2px;
+  text-transform: capitalize;
+  font-family: "Mulish", sans-serif;
+}

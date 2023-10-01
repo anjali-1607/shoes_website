@@ -10,6 +10,7 @@
 .cat-img1 {
   width: 25em;
   height: 15em;
+  cursor: pointer;
 }
 
 .categories_text {
@@ -17,9 +18,10 @@
   font-family: "Mulish", sans-serif;
   font-size: 36px !important;
   font-weight: 700;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   margin-top: 10px;
   text-transform: uppercase;
+  text-align: center;
 }
 .new_arr_textt {
   color: #000;

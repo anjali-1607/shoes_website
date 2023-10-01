@@ -1,0 +1,29 @@
+.abt_div {
+  width: auto;
+  height: auto;
+  background-color: white;
+  margin-top: 3em;
+  padding: 0 2em;
+  /* text-align: center; */
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.about_us_text {
+  font-family: Cinzel, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  /* margin-left: 2.3em; */
+  text-align: center;
+}
+.text_design {
+  padding: 2em;
+  /* margin: 2em; */
+}
+.div_border {
+  width: 100%;
+  height: auto;
+  border: 1px solid rgb(211, 211, 211);
+  display: flex;
+  padding: 5px;
+  margin-bottom: 1em;
+}

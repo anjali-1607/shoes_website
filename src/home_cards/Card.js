@@ -10,7 +10,7 @@ export default function Card({ apple, mango }) {
       <div className="card11">
         <img className="images" src={mango} />
         {/* <h1 style={{ fontFamily: "Cinzel,sans-serif" }}>{apple}</h1> */}
-        <div>{apple}</div>
+        <div className="texttt">{apple}</div>
       </div>
       {/* <div className="card_div">
         <div className="image_div">

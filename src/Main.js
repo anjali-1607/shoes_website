@@ -8,6 +8,7 @@ import Brands from "./home/Brands";
 import About from "./home/about/About";
 import Categories from "./home/category/Categories";
 import CategoriesCards from "./home/category/CategoriesCards";
+import Awesome_brands from "./home/awesome_brands/Awesome_brands";
 
 export default function Main() {
   return (
@@ -19,6 +20,7 @@ export default function Main() {
         <CategoriesCards />
         <Brands />
         <Card_data />
+        <Awesome_brands />
         <About />
         <Footers />
       </div>

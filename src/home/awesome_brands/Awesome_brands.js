@@ -4,7 +4,7 @@ import "./Awesome.css";
 export default function Awesome_brands() {
   return (
     <>
-      <div className="awesome_text">Awesome Brands</div>
+      <div className="heading_text">Awesome Brands</div>
       <div className="awesome_grand">
         <img
           className="awesome_logos"

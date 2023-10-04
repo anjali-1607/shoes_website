@@ -5,7 +5,7 @@ export default function About() {
   return (
     <>
       <div className="abt_div">
-        <h1 className="categories_text"> ABOUT US ...</h1>
+        <h1 className="heading_text"> ABOUT US ...</h1>
         <div className="div_border">
           <div>
             <p className="text_design">

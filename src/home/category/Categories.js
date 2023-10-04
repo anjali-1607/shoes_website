@@ -7,7 +7,7 @@ export default function Categories() {
       <div className="brand">
         <div className="brand_div">
           {" "}
-          <div className="categories_text">Categories </div>
+          <div className="heading_text">Categories </div>
         </div>
       </div>
     </>

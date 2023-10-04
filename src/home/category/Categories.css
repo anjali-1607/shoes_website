@@ -13,12 +13,11 @@
   cursor: pointer;
 }
 
-.categories_text {
+.heading_text {
   color: #000;
-  font-family: "Mulish", sans-serif;
-  font-size: 36px !important;
+  font-family: "Roboto", sans-serif;
+  font-size: 37px !important;
   font-weight: 700;
-  /* letter-spacing: 1px; */
   margin-top: 10px;
   text-transform: uppercase;
   text-align: center;

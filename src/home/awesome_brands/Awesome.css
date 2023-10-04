@@ -6,21 +6,12 @@
   display: flex;
   justify-content: space-between;
 }
-.awesome_text {
-  text-align: center;
-  margin-top: 1.5em;
-  color: #000;
-  font-family: "Mulish", sans-serif;
-  font-size: 36px !important;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-}
+
 .awesome_logos {
   width: auto;
   height: 10em;
   cursor: pointer;
 }
 .awesome_logos:hover {
-  opacity: 0.8;
+  opacity: 0.85;
 }

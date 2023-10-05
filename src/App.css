@@ -12,11 +12,7 @@
   padding: 0em;
   margin: 0;
 }
-.grand_carousel {
-  height: 40em;
-  background-image: white;
-  display: flex;
-}
+
 .square_div {
   width: 5em;
   height: 40em;

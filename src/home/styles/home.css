@@ -2,3 +2,13 @@
   font-family: "oswald";
   font-size: 40px;
 }
+.grand_carousel {
+  height: 40em;
+  background-image: white;
+  display: flex;
+}
+.carousel_image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}

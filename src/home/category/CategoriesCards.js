@@ -5,13 +5,12 @@ export default function CategoriesCards() {
   return (
     <>
       <div className="categories1">
-        <div>
-          <div className="categories2">
-            <img
-              className="cat-img1"
-              src={require("../../images/cat_shoe.jpg")}
-            />
-          </div>
+        <div className="categories2">
+          <img
+            className="cat-img1"
+            src={require("../../images/category.webp")}
+          />
+
           <div className="new_arr_textt"> New Arrivals</div>
         </div>
         <div>

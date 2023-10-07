@@ -11,6 +11,7 @@ export default function Shopbycat() {
       <div className="heading_text">SHOP BY CATEGORIES</div>
       <div className="shopbycat">
         <button
+          active
           className="filter"
           onClick={() => {
             setActive("men");

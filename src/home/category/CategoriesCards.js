@@ -1,12 +1,17 @@
 import React from "react";
 import "./Categories.css";
+import { useNavigate } from "react-router-dom";
 
 export default function CategoriesCards() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="categories1">
         <div className="categories2">
           <img
+            onClick={() => {
+              navigate("/arrivals");
+            }}
             className="cat-img1"
             src={require("../../images/category.webp")}
           />
@@ -16,6 +21,9 @@ export default function CategoriesCards() {
         <div>
           <div className="categories2">
             <img
+              onClick={() => {
+                navigate("/men");
+              }}
               className="cat-img1"
               src={require("../../images/menshoe.png")}
             />
@@ -25,6 +33,9 @@ export default function CategoriesCards() {
         <div>
           <div className="categories2">
             <img
+              onClick={() => {
+                navigate("/women");
+              }}
               className="cat-img1"
               src={require("../../images/womenshoe.jpg")}
             />
@@ -34,6 +45,9 @@ export default function CategoriesCards() {
         <div>
           <div className="categories2">
             <img
+              onClick={() => {
+                navigate("/kids");
+              }}
               className="cat-img1"
               src={require("../../images/kidshoe.jpg")}
             />

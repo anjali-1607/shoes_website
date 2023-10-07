@@ -6,7 +6,7 @@ export default function Brands() {
       <div className="brand">
         <div className="brand_div">
           {" "}
-          <h1 className="heading_text"> Brands Best Sellers </h1>
+          <h1 className="heading_text"> Our Best Sellers </h1>
         </div>
       </div>
     </>

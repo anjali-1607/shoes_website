@@ -1,0 +1,17 @@
+.filter_cat {
+  width: 20em;
+  height: 60em;
+  border: 1px solid #f0f0f0;
+  margin: 1em 9px;
+  background-color: white;
+}
+.filter_text_cat {
+  width: auto;
+  height: 3em;
+  border-bottom: 1px solid #f0f0f0;
+  padding-left: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}

@@ -19,7 +19,7 @@
   height: auto;
   display: flex;
   flex-direction: column;
-  border-top: 1px solid #e6e6e6;
+  /* border-top: 1px solid #f0f0f0; */
   border-bottom: 1px solid #e6e6e6;
   padding: 10px 0 15px 12px;
 }
@@ -46,4 +46,18 @@
   font-weight: 100 !important;
   cursor: pointer;
   color: black;
+}
+.checkbox {
+  padding-left: 30px;
+  font-size: 14px;
+  font-family: Roboto, Arial, sans-serif;
+  margin-top: 7px;
+  font-weight: 100 !important;
+  cursor: pointer;
+  color: black;
+  word-spacing: 10px;
+  align-items: center;
+  /* justify-content: space-evenly; */
+  display: flex;
+  cursor: pointer;
 }

@@ -24,6 +24,21 @@ export default function Filter() {
             Men's Footwear
           </a>
         </div>
+        <div className="second_filter_div">
+          <div className="cat_div_">GENDER</div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1"> Men</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1"> Women</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">Kids</label>
+          </div>
+        </div>
       </div>
     </>
   );

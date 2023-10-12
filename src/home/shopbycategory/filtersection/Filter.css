@@ -1,5 +1,5 @@
 .filter_cat {
-  width: 20em;
+  width: 24em;
   height: 60em;
   border: 1px solid #f0f0f0;
   margin: 1em 9px;
@@ -14,4 +14,36 @@
   font-weight: 600;
   display: flex;
   align-items: center;
+}
+.second_filter_div {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 10px 0 15px 12px;
+}
+.cat_div_ {
+  font-family: Roboto, Arial, sans-serif;
+  font-size: 12px;
+  line-height: 16.8px;
+  text-align: start;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgb(116, 116, 116);
+}
+.foot_div {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+.inner_text {
+  padding-left: 30px;
+  font-size: 14px;
+  font-family: Roboto, Arial, sans-serif;
+  margin-top: 7px;
+  font-weight: 100 !important;
+  cursor: pointer;
+  color: black;
 }

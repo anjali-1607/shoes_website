@@ -39,6 +39,37 @@ export default function Filter() {
             <label for="vehicle1">Kids</label>
           </div>
         </div>
+        <div className="second_filter_div">
+          <div className="cat_div_">BRAND</div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1"> Adidas</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1"> Liberty</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">Woodland</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">Puma</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">Bata</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">RedTape</label>
+          </div>
+          <div className="checkbox">
+            <input type="checkbox"></input>
+            <label for="vehicle1">Nike</label>
+          </div>
+        </div>
       </div>
     </>
   );

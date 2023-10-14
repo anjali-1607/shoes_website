@@ -12,21 +12,21 @@ export default function Shopbycat() {
       <div className="shopbycat">
         <button
           active
-          className="filter"
+          className={`filter ${active === "men" && "activee"}`}
           onClick={() => {
             setActive("men");
           }}>
           Men
         </button>
         <button
-          className="filter"
+          className={`filter ${active === "women" && "activee"}`}
           onClick={() => {
             setActive("women");
           }}>
           Women
         </button>
         <button
-          className="filter"
+          className={`filter ${active === "kids" && "activee"}`}
           onClick={() => {
             setActive("kids");
           }}>

@@ -61,3 +61,6 @@
   display: flex;
   cursor: pointer;
 }
+.spacing_div {
+  margin-left: 5px;
+}

@@ -67,3 +67,7 @@
   );
   animation: slidebg 10s linear infinite;
 }
+.activee {
+  color: #00c0ff;
+  border-color: #00c0ff;
+}

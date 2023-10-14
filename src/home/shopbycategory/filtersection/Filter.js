@@ -3,6 +3,17 @@ import "./Filter.css";
 import { Icon } from "semantic-ui-react";
 
 export default function Filter() {
+  const brands = [
+    "Adidas",
+    "Puma",
+    "Nike",
+    "RedTape",
+    "Liberty",
+    "Woodland",
+    "Bata",
+  ];
+  const categories = ["Men", "Women", "Kids"];
+
   return (
     <>
       <div className="filter_cat">
@@ -26,49 +37,30 @@ export default function Filter() {
         </div>
         <div className="second_filter_div">
           <div className="cat_div_">GENDER</div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1"> Men</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1"> Women</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">Kids</label>
-          </div>
+          {categories.map((category, idx) => {
+            return (
+              <div className="checkbox">
+                <input type="checkbox"></input>
+                <label className="spacing_div" id={idx}>
+                  {category}
+                </label>
+              </div>
+            );
+          })}
         </div>
         <div className="second_filter_div">
           <div className="cat_div_">BRAND</div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1"> Adidas</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1"> Liberty</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">Woodland</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">Puma</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">Bata</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">RedTape</label>
-          </div>
-          <div className="checkbox">
-            <input type="checkbox"></input>
-            <label for="vehicle1">Nike</label>
-          </div>
+          {brands.map((brand, idx) => {
+            return (
+              <div className="checkbox">
+                <input type="checkbox"></input>
+                <label className="spacing_div" id={idx}>
+                  {" "}
+                  {brand}
+                </label>
+              </div>
+            );
+          })}
         </div>
       </div>
     </>

@@ -47,7 +47,7 @@ export default function Navbar() {
         </div>
         <div className="nav11">
           <button
-            className="nav123"
+            className={`nav123${location.pathname === "/" ? " active" : ""}`}
             active={location.pathname === "/" ? true : false}
             onClick={() => {
               navigate("/");
@@ -55,32 +55,34 @@ export default function Navbar() {
             Home
           </button>
           <button
-            className="nav123"
-            active={location.pathname === "/arrivals" ? true : false}
+            className={`nav123${
+              location.pathname === "/arrivals" ? " active" : ""
+            }`}
             onClick={() => {
               navigate("/arrivals");
             }}>
             New Arrivals
           </button>
           <button
-            className="nav123"
-            active={location.pathname === "/men" ? true : false}
+            className={`nav123${location.pathname === "/men" ? " active" : ""}`}
             onClick={() => {
               navigate("/men");
             }}>
             Men
           </button>
           <button
-            className="nav123"
-            active={location.pathname === "/women" ? true : false}
+            className={`nav123${
+              location.pathname === "/women" ? " active" : ""
+            }`}
             onClick={() => {
               navigate("/women");
             }}>
             Women
           </button>
           <button
-            className="nav123"
-            active={location.pathname === "/kids" ? true : false}
+            className={`nav123${
+              location.pathname === "/kids" ? " active" : ""
+            }`}
             onClick={() => {
               navigate("/kids");
             }}>
@@ -125,85 +127,5 @@ export default function Navbar() {
         </div>
       </div>
     </>
-    // <div className="menu_div">
-    //   <Menu>
-    //     <Menu.Item name="logo0" />
-    //     <Menu.Item
-    //       className="menu"
-    //       name="Home"
-    //       active={location.pathname === "/" ? true : false}
-    //       onClick={() => {
-    //         navigate("/");
-    //       }}
-    //     />
-    //     <Menu.Item
-    //       name="New Arrivals"
-    //       active={location.pathname === "/arrivals" ? true : false}
-    //       onClick={() => {
-    //         navigate("/arrivals");
-    //       }}
-    //     />
-    //     <Menu.Item
-    //       name="Men"
-    //       active={location.pathname === "/men" ? true : false}
-    //       onClick={() => {
-    //         navigate("/men");
-    //       }}
-    //     />
-    //     <Menu.Item
-    //       name="Women"
-    //       active={location.pathname === "/women" ? true : false}
-    //       onClick={() => {
-    //         navigate("/women");
-    //       }}
-    //     />
-    //     <Menu.Item
-    //       name="Kids"
-    //       active={location.pathname === "/kids" ? true : false}
-    //       onClick={() => {
-    //         navigate("/kids");
-    //       }}
-    //     />
-
-    //     <Menu.Menu position="right">
-    //       <Menu.Item>
-    //         <Input icon="search" placeholder="Search..." />
-    //       </Menu.Item>
-    //       <div style={{ marginTop: "12px", cursor: "pointer" }}>
-    //         <Icon
-    //           name="cart arrow down"
-    //           size="large"
-    //           onClick={() => {
-    //             navigate("/mycart");
-    //           }}></Icon>
-    //       </div>
-    //       <div className="login_btn_div">
-    //         {localStorage.getItem("access_token") ? (
-    //           <>
-    //             <Dropdown style={{ padding: "1em" }} icon="user" text={name}>
-    //               <Dropdown.Menu>
-    //                 <Dropdown.Item
-    //                   text="LogOut"
-    //                   onClick={() => {
-    //                     localStorage.removeItem("access_token");
-    //                     navigate("/login");
-    //                   }}
-    //                 />
-    //               </Dropdown.Menu>
-    //             </Dropdown>
-    //           </>
-    //         ) : (
-    //           <Button
-    //             basic
-    //             onClick={() => {
-    //               gotologin();
-    //             }}>
-    //             Log In
-    //           </Button>
-    //         )}
-    //       </div>
-    //     </Menu.Menu>
-    //   </Menu>
-    // </div>
   );
 }

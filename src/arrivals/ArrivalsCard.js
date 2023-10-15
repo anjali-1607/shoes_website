@@ -3,13 +3,15 @@ import "./Arrivals.css";
 import { publicAxios } from "../commons/auth";
 import { ToastContainer } from "react-toastify";
 import ArrivalsBtn from "./ArrivalsBtn";
+// import Filter from "./home/shopbycategory/filtersection/Filter";
 import { useNavigate } from "react-router-dom";
+import Filter from "../home/shopbycategory/filtersection/Filter";
 
 export default function ArrivalsCard({ name, image, price, id, salePrice }) {
   const navigate = useNavigate();
   return (
     <>
-      <div>
+      {/* <div>
         <div className="grand_product_div">
           <div
             className="parent_arr_div"
@@ -33,7 +35,7 @@ export default function ArrivalsCard({ name, image, price, id, salePrice }) {
           </div>
           <ArrivalsBtn id={id} />
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

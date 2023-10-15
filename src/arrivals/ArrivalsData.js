@@ -3,6 +3,8 @@ import "./Arrivals.css";
 import ArrivalsCard from "./ArrivalsCard";
 import Navbar from "../commons/Navbar";
 import { publicAxios, registerAxios } from "../commons/auth";
+import Filter from "../home/shopbycategory/filtersection/Filter";
+import Productslist from "../home/shopbycategory/productlist/Productslist";
 
 export default function ArrivalsData() {
   const [data, setData] = useState([]);
@@ -21,6 +23,10 @@ export default function ArrivalsData() {
   return (
     <>
       <Navbar />
+      <div style={{ display: "flex" }}>
+        <Filter />
+        <Productslist />
+      </div>
       <div className="card_manager">
         {data.map((e) => {
           // console.log(e);

@@ -25,26 +25,7 @@ export default function ArrivalsData() {
       <Navbar />
       <div style={{ display: "flex" }}>
         <Filter />
-        <Productslist />
-      </div>
-      <div className="card_manager">
-        {data.map((e) => {
-          // console.log(e);
-          return (
-            <>
-              <div>
-                <ArrivalsCard
-                  image={e.image}
-                  name={e.name}
-                  price={e.price}
-                  salePrice={e.sale_price}
-                  size={e.size}
-                  id={e.id}
-                />
-              </div>
-            </>
-          );
-        })}
+        <Productslist data={data} />
       </div>
     </>
   );

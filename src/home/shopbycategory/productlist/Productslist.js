@@ -1,18 +1,37 @@
 import React from "react";
-import "./Productslist.css";
+import SortBy from "./SortBy";
+import ArrivalsCard from "../../../arrivals/ArrivalsCard";
 
-export default function Productslist() {
+export default function Productslist({ data }) {
   return (
     <>
-      <div className="products_lists">
-        Sort By
-        <button className="sortby_btn">Relevance</button>
-        <button className="sortby_btn">Popularity</button>
-        <button className="sortby_btn">Price--Low to High</button>
-        <button className="sortby_btn">Price--High to Low </button>
-        <button className="sortby_btn">Newest First</button>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          width: "100%",
+        }}>
+        <SortBy />
+        <div className="card_manager">
+          {data?.map((e) => {
+            // console.log(e);/
+            return (
+              <>
+                <div>
+                  <ArrivalsCard
+                    image={e.image}
+                    name={e.name}
+                    price={e.price}
+                    salePrice={e.sale_price}
+                    size={e.size}
+                    id={e.id}
+                  />
+                </div>
+              </>
+            );
+          })}
+        </div>
       </div>
-      ;
     </>
   );
 }

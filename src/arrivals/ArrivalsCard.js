@@ -11,7 +11,7 @@ export default function ArrivalsCard({ name, image, price, id, salePrice }) {
   const navigate = useNavigate();
   return (
     <>
-      {/* <div>
+      <div>
         <div className="grand_product_div">
           <div
             className="parent_arr_div"
@@ -35,7 +35,7 @@ export default function ArrivalsCard({ name, image, price, id, salePrice }) {
           </div>
           <ArrivalsBtn id={id} />
         </div>
-      </div> */}
+      </div>
     </>
   );
 }

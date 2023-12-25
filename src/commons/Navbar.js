@@ -14,7 +14,7 @@ import { secureAxios } from "./auth";
 export default function Navbar() {
   const [name, setName] = useState("");
   const navigate = useNavigate();
-
+  const location = useLocation();
   const gotologin = () => {
     navigate("/login");
   };

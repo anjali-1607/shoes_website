@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Womencat() {
+  const img = [];
+  const desc = ["Formal Shoes", "Wedding Sandals", "Sandals", "Heels"];
   return (
     <>
       <div className="catimage_div">
@@ -28,7 +30,7 @@ export default function Womencat() {
           <div className="catsubheading2">
             Elevate Your Fashion with Elegance
           </div>
-          <button className="shopbtn">Shop Womwn Heels</button>
+          <button className="shopbtn">Shop Women Heels</button>
         </div>
       </div>
     </>

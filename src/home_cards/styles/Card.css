@@ -4,6 +4,7 @@
   border: 1px solid rgb(197, 197, 197);
   cursor: pointer;
   margin-bottom: 2em;
+  margin-top: 10px;
 }
 
 .image_div {
@@ -35,9 +36,9 @@
 }
 .texttt {
   color: #000;
-  font-size: 16px !important;
+  font-size: 18px !important;
   font-weight: 500;
-  padding-top: 2px;
+  padding-top: 1px;
   text-transform: capitalize;
-  font-family: "Mulish", sans-serif;
+  font-family: Josefin Sans;
 }

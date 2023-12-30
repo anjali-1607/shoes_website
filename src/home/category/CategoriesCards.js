@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Categories.css";
 import { useNavigate } from "react-router-dom";
 
@@ -7,16 +7,17 @@ export default function CategoriesCards() {
   return (
     <>
       <div className="categories1">
-        <div className="categories2">
-          <img
-            onClick={() => {
-              navigate("/arrivals");
-            }}
-            className="cat-img1"
-            src={require("../../images/category.webp")}
-          />
-
-          <div className="new_arr_textt"> New Arrivals</div>
+        <div>
+          <div className="categories2">
+            <img
+              onClick={() => {
+                navigate("/arrivals");
+              }}
+              className="cat-img1"
+              src={require("../../images/category.webp")}
+            />
+          </div>
+          <div className="new_arr_textt">New Arrivals</div>
         </div>
         <div>
           <div className="categories2">

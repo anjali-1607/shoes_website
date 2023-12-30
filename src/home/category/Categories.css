@@ -13,22 +13,25 @@
   width: 25em;
   height: 15em;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  overflow: hidden;
 }
-
 .heading_text {
   color: #000;
   font-family: "Roboto", sans-serif;
   font-size: 37px !important;
   font-weight: 700;
-  margin-top: 10px;
+  margin-top: 7px;
   text-transform: uppercase;
   text-align: center;
 }
 .new_arr_textt {
   color: #000;
-  font-size: 16px !important;
-  font-weight: 500;
+  font-size: 18px !important;
+  font-weight: 530;
   padding-top: 7px;
   text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
+  font-family: "Josefin Sans";
+  margin-bottom: 10px;
 }
